@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YardRush — To the outside and beyond!</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fff; color: #1a1a1a; }
+
+  nav { background: #0a1f2e; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .nav-logo { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+  .nav-logo span { color: #1db87a; }
+  .nav-right { display: flex; align-items: center; gap: 12px; }
+  .lang-toggle { display: flex; background: rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden; }
+  .lang-btn { background: transparent; border: none; color: rgba(255,255,255,0.6); padding: 7px 12px; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.2s; letter-spacing: 0.5px; }
+  .lang-btn.active { background: #1db87a; color: #fff; }
+  .nav-cta { background: #1db87a; color: #fff; border: none; border-radius: 8px; padding: 9px 18px; font-size: 13px; font-weight: 700; cursor: pointer; text-decoration: none; }
+  .nav-cta:hover { background: #17a368; }
+
+  .hero { background: #0a1f2e; padding: 80px 24px 90px; text-align: center; }
+  .hero-badge { display: inline-block; background: rgba(29,184,122,0.15); color: #1db87a; border: 1px solid rgba(29,184,122,0.3); border-radius: 20px; padding: 6px 16px; font-size: 12px; font-weight: 700; letter-spacing: 1px; margin-bottom: 24px; }
+  .hero h1 { font-size: clamp(36px, 6vw, 64px); font-weight: 800; color: #fff; letter-spacing: -2px; line-height: 1.05; margin-bottom: 16px; }
+  .hero h1 span { color: #1db87a; }
+  .hero-tagline { font-size: clamp(16px, 2.5vw, 20px); color: rgba(255,255,255,0.6); margin-bottom: 40px; font-weight: 400; }
+  .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 56px; }
+  .btn-green { background: #1db87a; color: #fff; border: none; border-radius: 12px; padding: 15px 28px; font-size: 15px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s; }
+  .btn-green:hover { background: #17a368; }
+  .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.25); border-radius: 12px; padding: 15px 28px; font-size: 15px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.2s; }
+  .btn-outline:hover { border-color: #1db87a; color: #1db87a; }
+  .services-strip { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .service-pill { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 7px 14px; font-size: 13px; color: rgba(255,255,255,0.7); }
+
+  .section-label { font-size: 11px; font-weight: 700; color: #1db87a; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+  .section-title { font-size: clamp(28px, 4vw, 42px); font-weight: 800; letter-spacing: -1px; margin-bottom: 14px; color: #0a1f2e; }
+  .section-sub { font-size: 16px; color: #666; max-width: 560px; line-height: 1.6; margin-bottom: 50px; }
+
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px; }
+  .step-card { background: #f8fffe; border: 1.5px solid #c8f0de; border-radius: 18px; padding: 28px 24px; }
+  .step-num { width: 38px; height: 38px; background: #0a1f2e; color: #1db87a; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; margin-bottom: 16px; }
+  .step-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #0a1f2e; }
+  .step-desc { font-size: 14px; color: #666; line-height: 1.6; }
+
+  .services-section { background: #f5f7fa; padding: 80px 24px; }
+  .services-inner { max-width: 1000px; margin: 0 auto; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; }
+  .service-card { background: #fff; border-radius: 16px; padding: 22px 16px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .service-icon { font-size: 32px; margin-bottom: 10px; }
+  .service-name { font-size: 13px; font-weight: 700; color: #0a1f2e; margin-bottom: 4px; }
+
+  .provider-section { background: #0a1f2e; padding: 80px 24px; }
+  .provider-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .provider-label { font-size: 11px; font-weight: 700; color: #1db87a; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+  .provider-title { font-size: clamp(26px, 3.5vw, 38px); font-weight: 800; color: #fff; letter-spacing: -1px; margin-bottom: 16px; line-height: 1.1; }
+  .provider-title span { color: #1db87a; }
+  .provider-desc { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 28px; }
+  .perks { display: flex; flex-direction: column; gap: 12px; }
+  .perk { display: flex; align-items: flex-start; gap: 12px; }
+  .perk-dot { width: 22px; height: 22px; background: #1db87a; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+  .perk-text { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+  .provider-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .stat-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 24px; text-align: center; }
+  .stat-val { font-size: 36px; font-weight: 800; color: #1db87a; }
+  .stat-lbl { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+
+  .waitlist-section { padding: 80px 24px; background: #fff; }
+  .waitlist-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+  .waitlist-inner .section-sub { margin: 0 auto 40px; }
+  .tabs { display: flex; background: #f0f0f0; border-radius: 12px; padding: 4px; gap: 4px; margin-bottom: 28px; }
+  .tab { flex: 1; padding: 11px; border: none; background: transparent; border-radius: 9px; font-size: 14px; font-weight: 600; cursor: pointer; color: #888; transition: all 0.2s; }
+  .tab.active { background: #fff; color: #0a1f2e; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+  .form-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
+  .form-group input { border: 1.5px solid #e0e0e0; border-radius: 10px; padding: 14px 16px; font-size: 15px; outline: none; transition: border-color 0.2s; }
+  .form-group input:focus { border-color: #1db87a; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .btn-submit { background: #1db87a; color: #fff; border: none; border-radius: 10px; padding: 15px; font-size: 15px; font-weight: 700; cursor: pointer; width: 100%; margin-top: 4px; transition: background 0.2s; }
+  .btn-submit:hover { background: #17a368; }
+  .form-note { font-size: 12px; color: #aaa; margin-top: 10px; }
+  .success-msg { background: #f0faf5; border: 1.5px solid #1db87a; border-radius: 12px; padding: 20px; text-align: center; display: none; }
+  .success-msg .icon { font-size: 32px; margin-bottom: 8px; }
+  .success-msg p { font-size: 15px; font-weight: 600; color: #0a1f2e; }
+  .success-msg span { font-size: 13px; color: #666; }
+
+  footer { background: #0a1f2e; padding: 32px 24px; text-align: center; }
+  .footer-logo { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+  .footer-logo span { color: #1db87a; }
+  .footer-tagline { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+  .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
+  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; }
+  .footer-links a:hover { color: #1db87a; }
+  .footer-copy { font-size: 11px; color: rgba(255,255,255,0.25); }
+
+  @media (max-width: 600px) {
+    .provider-inner { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+    .provider-stats { grid-template-columns: 1fr 1fr; }
+    .nav-cta { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Yard<span>Rush</span></div>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    </div>
+    <a class="nav-cta" href="#waitlist" id="nav-cta-text">Join the Waitlist</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge" id="hero-badge">🌿 Local help, right in Saint-Bruno-de-Montarville</div>
+  <h1 id="hero-h1">Your yard.<br><span id="hero-h1-span">Connected.</span></h1>
+  <p class="hero-tagline" id="hero-tagline">To the outside and beyond!</p>
+  <div class="hero-buttons">
+    <a class="btn-green" href="#waitlist" id="hero-btn1">Browse Services</a>
+    <a class="btn-outline" href="#provider" id="hero-btn2">Earn This Season</a>
+  </div>
+  <div class="services-strip">
+    <span class="service-pill" data-en="🌿 Grass Cutting" data-fr="🌿 Tonte de gazon">🌿 Grass Cutting</span>
+    <span class="service-pill" data-en="❄️ Snow Removal" data-fr="❄️ Déneigement">❄️ Snow Removal</span>
+    <span class="service-pill" data-en="🍂 Leaf Clean Up" data-fr="🍂 Ramassage de feuilles">🍂 Leaf Clean Up</span>
+    <span class="service-pill" data-en="🗑️ Bin Cleaning" data-fr="🗑️ Nettoyage de bacs">🗑️ Bin Cleaning</span>
+    <span class="service-pill" data-en="🔧 Tire Changes" data-fr="🔧 Changement de pneus">🔧 Tire Changes</span>
+    <span class="service-pill" data-en="🚗 Car Cleaning" data-fr="🚗 Nettoyage de voiture">🚗 Car Cleaning</span>
+    <span class="service-pill" data-en="🪣 Gutter Cleaning" data-fr="🪣 Nettoyage de gouttières">🪣 Gutter Cleaning</span>
+    <span class="service-pill" data-en="🧹 Sweeping" data-fr="🧹 Balayage">🧹 Sweeping</span>
+    <span class="service-pill" data-en="🖌️ Painting" data-fr="🖌️ Peinture">🖌️ Painting</span>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div style="background:#fff; padding: 80px 24px;">
+  <div style="max-width:1000px; margin: 0 auto;">
+    <div class="section-label" id="how-label">How it works</div>
+    <div class="section-title" id="how-title">Done in minutes,<br>not days.</div>
+    <p class="section-sub" id="how-sub">No calls, no waiting. Choose a service, get connected with local independent providers, and coordinate to track progress.</p>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-title" id="step1-title">Choose your service</div>
+        <div class="step-desc" id="step1-desc">Pick from our full list of services. Configure the details — yard size, vehicle type, bin type — and submit.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-title" id="step2-title">Connect with available local independent providers</div>
+        <div class="step-desc" id="step2-desc">You can connect with available local independent providers nearby. See their profile, rating, and estimated arrival time.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-title" id="step3-title">Coordinate directly with your provider</div>
+        <div class="step-desc" id="step3-desc">Coordinate directly with your provider as the work progresses. Your independent provider may share updates directly with you.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <div class="step-title" id="step4-title">Leave feedback after the job</div>
+        <div class="step-desc" id="step4-desc">Leave a rating after every job. Payment is arranged directly between you and the provider.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div class="services-section">
+  <div class="services-inner">
+    <div class="section-label" id="svc-label">Services</div>
+    <div class="section-title" id="svc-title">Outside and beyond.</div>
+    <p class="section-sub" id="svc-sub" style="margin-bottom:40px;">From your lawn to your car — YardRush connects you to year-round local help.</p>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon">🌿</div><div class="service-name" data-en="Grass Cutting" data-fr="Tonte de gazon">Grass Cutting</div></div>
+      <div class="service-card"><div class="service-icon">❄️</div><div class="service-name" data-en="Snow Removal" data-fr="Déneigement">Snow Removal</div></div>
+      <div class="service-card"><div class="service-icon">🍂</div><div class="service-name" data-en="Leaf Clean Up" data-fr="Ramassage de feuilles">Leaf Clean Up</div></div>
+      <div class="service-card"><div class="service-icon">🪣</div><div class="service-name" data-en="Gutter Cleaning" data-fr="Nettoyage de gouttières">Gutter Cleaning</div></div>
+      <div class="service-card"><div class="service-icon">🧹</div><div class="service-name" data-en="Sweeping" data-fr="Balayage">Sweeping</div></div>
+      <div class="service-card"><div class="service-icon">🗑️</div><div class="service-name" data-en="Bin Cleaning" data-fr="Nettoyage de bacs">Bin Cleaning</div></div>
+      <div class="service-card"><div class="service-icon">🔧</div><div class="service-name" data-en="Tire Change" data-fr="Changement de pneus">Tire Change</div></div>
+      <div class="service-card"><div class="service-icon">🚗</div><div class="service-name" data-en="Car Cleaning" data-fr="Nettoyage de voiture">Car Cleaning</div></div>
+      <div class="service-card"><div class="service-icon">🖌️</div><div class="service-name" data-en="Painting" data-fr="Peinture">Painting</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROVIDER SECTION -->
+<div class="provider-section" id="provider">
+  <div class="provider-inner">
+    <div>
+      <div class="provider-label" id="prov-label">For independent providers</div>
+      <div class="provider-title" id="prov-title">Earn locally<br>in your <span>neighbourhood.</span></div>
+      <p class="provider-desc" id="prov-desc">YardRush is a platform where local individuals can offer services to their community — all summer long and all winter too. Provide your own equipment, set your own schedule, and start.</p>
+      <div class="perks">
+        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text" id="perk1">Set your own availability — work when it suits you</div></div>
+        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text" id="perk2">Providers determine their own pricing (YardRush may introduce fees in the future as the platform evolves)</div></div>
+        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text" id="perk3">Build your reputation with ratings and reviews</div></div>
+        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text" id="perk4">Arrange payments directly with customers</div></div>
+        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text" id="perk5">Work year-round — lawn season to snow season and everything in between</div></div>
+      </div>
+    </div>
+    <div class="provider-stats">
+      <div class="stat-box"><div class="stat-val">9+</div><div class="stat-lbl" id="stat1">Services to offer</div></div>
+      <div class="stat-box"><div class="stat-val">⭐</div><div class="stat-lbl" id="stat2">Grow your reputation through reviews</div></div>
+      <div class="stat-box"><div class="stat-val">📍</div><div class="stat-lbl" id="stat3">Keep it local</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- WAITLIST -->
+<div class="waitlist-section" id="waitlist">
+  <div class="waitlist-inner">
+    <div class="section-label" id="wl-label">Early access</div>
+    <div class="section-title" id="wl-title">Be first in line.</div>
+    <p class="section-sub" id="wl-sub">YardRush is launching soon in Saint-Bruno-de-Montarville. Join the waitlist as a customer or an independent provider and stay tuned for the moment we go live.</p>
+    <div class="tabs">
+      <button class="tab active" id="tab-customer" onclick="switchTab('customer')">🏠 I need services</button>
+      <button class="tab" id="tab-provider" onclick="switchTab('provider')">👷 I want to work</button>
+    </div>
+    <div id="form-customer">
+      <div class="form-group">
+        <div class="form-row">
+          <input type="text" id="c-first" placeholder="First name">
+          <input type="text" id="c-last" placeholder="Last name">
+        </div>
+        <input type="email" id="c-email" placeholder="Email address">
+        <input type="text" id="c-area" placeholder="Your neighbourhood or street (optional)">
+      </div>
+      <button class="btn-submit" onclick="submitForm('customer')" id="btn-customer-submit">Join Customer Waitlist →</button>
+      <p class="form-note" id="note-customer">No spam. We'll only email you when YardRush launches in your area.</p>
+    </div>
+    <div id="form-provider" style="display:none;">
+      <div class="form-group">
+        <div class="form-row">
+          <input type="text" id="w-first" placeholder="First name">
+          <input type="text" id="w-last" placeholder="Last name">
+        </div>
+        <input type="email" id="w-email" placeholder="Email address">
+        <input type="text" id="w-age" placeholder="Your age">
+        <input type="text" id="w-services" placeholder="Services you can offer (e.g. lawn mowing, snow removal)">
+      </div>
+      <button class="btn-submit" onclick="submitForm('provider')" id="btn-provider-submit">Join Provider Waitlist →</button>
+      <p class="form-note" id="note-provider">Stay tuned as we roll out so you can get started.</p>
+    </div>
+    <div class="success-msg" id="success-msg">
+      <div class="icon">🎉</div>
+      <p id="success-title">You're on the list!</p>
+      <span id="success-sub">We'll be in touch as soon as YardRush launches in Saint-Bruno-de-Montarville.</span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Yard<span>Rush</span></div>
+  <div class="footer-tagline" id="footer-tagline">To the outside and beyond!</div>
+  <div style="font-size:11px; color:rgba(255,255,255,0.45); max-width:700px; margin:0 auto 16px; line-height:1.6;" id="footer-disclaimer">
+    YardRush is a platform that connects users with independent service providers. YardRush does not directly provide services and is not responsible for the quality of services performed by independent providers.
+  </div>
+  <div class="footer-links">
+    <a href="#waitlist" id="footer-link1">Join Waitlist</a>
+    <a href="#provider" id="footer-link2">Work With Us</a>
+    <a href="mailto:info@yardrush.ca">info@yardrush.ca</a>
+  </div>
+  <div class="footer-copy">© 2026 YardRush · yardrush.ca · Saint-Bruno-de-Montarville, QC</div>
+</footer>
+
+<script>
+const t = {
+  en: {
+    'nav-cta-text': 'Join the Waitlist',
+    'hero-badge': '🌿 Local help, right in Saint-Bruno-de-Montarville',
+    'hero-h1': 'Your yard.<br><span id="hero-h1-span">Connected.</span>',
+    'hero-tagline': 'To the outside and beyond!',
+    'hero-btn1': 'Browse Services',
+    'hero-btn2': 'Earn This Season',
+    'how-label': 'How it works',
+    'how-title': 'Done in minutes,<br>not days.',
+    'how-sub': 'No calls, no waiting. Choose a service, get connected with local independent providers, and coordinate to track progress.',
+    'step1-title': 'Choose your service',
+    'step1-desc': 'Pick from our full list of services. Configure the details — yard size, vehicle type, bin type — and submit.',
+    'step2-title': 'Connect with available local independent providers',
+    'step2-desc': 'You can connect with available local independent providers nearby. See their profile, rating, and estimated arrival time.',
+    'step3-title': 'Coordinate directly with your provider',
+    'step3-desc': 'Coordinate directly with your provider as the work progresses. Your independent provider may share updates directly with you.',
+    'step4-title': 'Leave feedback after the job',
+    'step4-desc': 'Leave a rating after every job. Payment is arranged directly between you and the provider.',
+    'svc-label': 'Services',
+    'svc-title': 'Outside and beyond.',
+    'svc-sub': 'From your lawn to your car — YardRush connects you to year-round local help.',
+    'prov-label': 'For independent providers',
+    'prov-title': 'Earn locally<br>in your <span style="color:#1db87a">neighbourhood.</span>',
+    'prov-desc': 'YardRush is a platform where local individuals can offer services to their community — all summer long and all winter too. Provide your own equipment, set your own schedule, and start.',
+    'perk1': 'Set your own availability — work when it suits you',
+    'perk2': 'Providers determine their own pricing (YardRush may introduce fees in the future as the platform evolves)',
+    'perk3': 'Build your reputation with ratings and reviews',
+    'perk4': 'Arrange payments directly with customers',
+    'perk5': 'Work year-round — lawn season to snow season and everything in between',
+    'stat1': 'Services to offer',
+    'stat2': 'Grow your reputation through reviews',
+    'stat3': 'Keep it local',
+    'wl-label': 'Early access',
+    'wl-title': 'Be first in line.',
+    'wl-sub': 'YardRush is launching soon in Saint-Bruno-de-Montarville. Join the waitlist as a customer or an independent provider and stay tuned for the moment we go live.',
+    'tab-customer': '🏠 I need services',
+    'tab-provider': '👷 I want to work',
+    'btn-customer-submit': 'Join Customer Waitlist →',
+    'btn-provider-submit': 'Join Provider Waitlist →',
+    'note-customer': "No spam. We'll only email you when YardRush launches in your area.",
+    'note-provider': 'Stay tuned as we roll out so you can get started.',
+    'success-title': "You're on the list!",
+    'success-sub': "We'll be in touch as soon as YardRush launches in Saint-Bruno-de-Montarville.",
+    'footer-tagline': 'To the outside and beyond!',
+    'footer-disclaimer': 'YardRush is a platform that connects users with independent service providers. YardRush does not directly provide services and is not responsible for the quality of services performed by independent providers.',
+    'footer-link1': 'Join Waitlist',
+    'footer-link2': 'Work With Us',
+    'c-first': 'First name', 'c-last': 'Last name', 'c-email': 'Email address',
+    'c-area': 'Your neighbourhood or street (optional)',
+    'w-first': 'First name', 'w-last': 'Last name', 'w-email': 'Email address',
+    'w-age': 'Your age', 'w-services': 'Services you can offer (e.g. lawn mowing, snow removal)',
+    'alert': 'Please enter a valid email address.'
+  },
+  fr: {
+    'nav-cta-text': 'Rejoindre la liste',
+    'hero-badge': '🌿 Aide locale à Saint-Bruno-de-Montarville',
+    'hero-h1': 'Ton extérieur.<br><span id="hero-h1-span">Connecté.</span>',
+    'hero-tagline': 'À l\'extérieur et au-delà!',
+    'hero-btn1': 'Voir les services',
+    'hero-btn2': 'Gagner cet été',
+    'how-label': 'Comment ça marche',
+    'how-title': 'Réglé en minutes,<br>pas en jours.',
+    'how-sub': 'Pas d\'appels, pas d\'attente. Choisis un service, connecte-toi avec des prestataires locaux indépendants et suis l\'avancement.',
+    'step1-title': 'Choisis ton service',
+    'step1-desc': 'Sélectionne parmi notre liste complète. Configure les détails — superficie, type de véhicule, type de bac — et soumets ta demande.',
+    'step2-title': 'Connecte-toi avec un prestataire local',
+    'step2-desc': 'Consulte les profils des prestataires indépendants disponibles près de chez toi. Vois leurs évaluations et disponibilités.',
+    'step3-title': 'Coordonne directement avec ton prestataire',
+    'step3-desc': 'Reste en contact avec ton prestataire au fil des travaux. Il peut partager des mises à jour directement avec toi.',
+    'step4-title': 'Laisse un avis après le travail',
+    'step4-desc': 'Évalue chaque prestation. Le paiement est convenu directement entre toi et le prestataire.',
+    'svc-label': 'Services',
+    'svc-title': 'À l\'extérieur et au-delà.',
+    'svc-sub': 'De ton gazon à ta voiture — YardRush te connecte à de l\'aide locale, été comme hiver.',
+    'prov-label': 'Pour les prestataires indépendants',
+    'prov-title': 'Gagne localement<br>dans ton <span style="color:#1db87a">quartier.</span>',
+    'prov-desc': 'YardRush est une plateforme où des individus locaux peuvent offrir leurs services à leur communauté — été comme hiver. Apporte ton propre équipement, fixe ton horaire et commence.',
+    'perk1': 'Fixe tes propres disponibilités — travaille quand tu veux',
+    'perk2': 'Les prestataires déterminent leurs propres tarifs (YardRush pourrait introduire des frais dans le futur)',
+    'perk3': 'Bâtis ta réputation grâce aux évaluations et aux avis',
+    'perk4': 'Arrange les paiements directement avec tes clients',
+    'perk5': 'Travaille toute l\'année — saison de tonte, de déneigement et tout ce qui est entre les deux',
+    'stat1': 'Services à offrir',
+    'stat2': 'Bâtis ta réputation',
+    'stat3': 'Reste local',
+    'wl-label': 'Accès anticipé',
+    'wl-title': 'Sois parmi les premiers.',
+    'wl-sub': 'YardRush arrive bientôt à Saint-Bruno-de-Montarville. Inscris-toi sur la liste d\'attente en tant que client ou prestataire indépendant.',
+    'tab-customer': '🏠 J\'ai besoin de services',
+    'tab-provider': '👷 Je veux travailler',
+    'btn-customer-submit': 'Rejoindre la liste client →',
+    'btn-provider-submit': 'Rejoindre la liste prestataire →',
+    'note-customer': 'Pas de spam. On t\'écrira uniquement au lancement de YardRush dans ta région.',
+    'note-provider': 'On te contactera avec tout ce qu\'il faut pour commencer.',
+    'success-title': 'Tu es sur la liste!',
+    'success-sub': 'On te contactera dès que YardRush sera lancé à Saint-Bruno-de-Montarville.',
+    'footer-tagline': 'À l\'extérieur et au-delà!',
+    'footer-disclaimer': 'YardRush est une plateforme qui met en relation les utilisateurs avec des prestataires de services indépendants. YardRush ne fournit pas directement les services et n\'est pas responsable de la qualité des travaux effectués par les prestataires indépendants.',
+    'footer-link1': 'Liste d\'attente',
+    'footer-link2': 'Travailler avec nous',
+    'c-first': 'Prénom', 'c-last': 'Nom', 'c-email': 'Adresse courriel',
+    'c-area': 'Ton quartier ou ta rue (optionnel)',
+    'w-first': 'Prénom', 'w-last': 'Nom', 'w-email': 'Adresse courriel',
+    'w-age': 'Ton âge', 'w-services': 'Services que tu peux offrir (ex. tonte, déneigement)',
+    'alert': 'Veuillez entrer une adresse courriel valide.'
+  }
+};
+
+// Service pill translations
+const pillFR = ['🌿 Tonte de gazon','❄️ Déneigement','🍂 Ramassage de feuilles','🗑️ Nettoyage de bacs','🔧 Changement de pneus','🚗 Nettoyage de voiture','🪣 Nettoyage de gouttières','🧹 Balayage','🖌️ Peinture'];
+const pillEN = ['🌿 Grass Cutting','❄️ Snow Removal','🍂 Leaf Clean Up','🗑️ Bin Cleaning','🔧 Tire Changes','🚗 Car Cleaning','🪣 Gutter Cleaning','🧹 Sweeping','🖌️ Painting'];
+
+let currentLang = 'en';
+let currentFormTab = 'customer';
+let alertMsg = t.en.alert;
+
+function setLang(lang) {
+  currentLang = lang;
+  alertMsg = t[lang].alert;
+  document.documentElement.lang = lang;
+
+  // Toggle buttons
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+
+  // Update all text IDs
+  const ids = ['nav-cta-text','hero-badge','hero-tagline','hero-btn1','hero-btn2',
+    'how-label','how-title','how-sub','step1-title','step1-desc','step2-title','step2-desc',
+    'step3-title','step3-desc','step4-title','step4-desc','svc-label','svc-title','svc-sub',
+    'prov-label','prov-title','prov-desc','perk1','perk2','perk3','perk4','perk5',
+    'stat1','stat2','stat3','wl-label','wl-title','wl-sub','tab-customer','tab-provider',
+    'btn-customer-submit','btn-provider-submit','note-customer','note-provider',
+    'success-title','success-sub','footer-tagline','footer-disclaimer','footer-link1','footer-link2'];
+
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = t[lang][id];
+  });
+
+  // Update placeholders
+  ['c-first','c-last','c-email','c-area','w-first','w-last','w-email','w-age','w-services'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.placeholder = t[lang][id];
+  });
+
+  // Update service pills
+  const pills = document.querySelectorAll('.service-pill');
+  pills.forEach((p, i) => { p.textContent = lang === 'fr' ? pillFR[i] : pillEN[i]; });
+
+  // Update service card names
+  const names = document.querySelectorAll('.service-name');
+  const enNames = ['Grass Cutting','Snow Removal','Leaf Clean Up','Gutter Cleaning','Sweeping','Bin Cleaning','Tire Change','Car Cleaning','Painting'];
+  const frNames = ['Tonte de gazon','Déneigement','Ramassage de feuilles','Nettoyage de gouttières','Balayage','Nettoyage de bacs','Changement de pneus','Nettoyage de voiture','Peinture'];
+  names.forEach((n, i) => { n.textContent = lang === 'fr' ? frNames[i] : enNames[i]; });
+
+  // Re-apply active tab state
+  switchTab(currentFormTab);
+}
+
+function switchTab(tab) {
+  currentFormTab = tab;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  document.getElementById('form-customer').style.display = tab === 'customer' ? 'block' : 'none';
+  document.getElementById('form-provider').style.display = tab === 'provider' ? 'block' : 'none';
+}
+
+function submitForm(type) {
+  const email = document.getElementById(type === 'customer' ? 'c-email' : 'w-email').value;
+  if (!email || !email.includes('@')) { alert(alertMsg); return; }
+  document.getElementById('form-customer').style.display = 'none';
+  document.getElementById('form-provider').style.display = 'none';
+  document.getElementById('success-msg').style.display = 'block';
+}
+</script>
+</body>
+</html>

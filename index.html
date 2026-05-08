@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YardRush — To the outside and beyond!</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fff; color: #1a1a1a; }
+
+  /* NAV */
+  nav { background: #0a1f2e; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .nav-logo { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+  .nav-logo span { color: #1db87a; }
+  .nav-ca { font-size: 11px; color: rgba(255,255,255,0.4); margin-left: 2px; }
+  .nav-cta { background: #1db87a; color: #fff; border: none; border-radius: 8px; padding: 9px 18px; font-size: 13px; font-weight: 700; cursor: pointer; text-decoration: none; }
+  .nav-cta:hover { background: #17a368; }
+
+  /* HERO */
+  .hero { background: #0a1f2e; padding: 80px 24px 90px; text-align: center; }
+  .hero-badge { display: inline-block; background: rgba(29,184,122,0.15); color: #1db87a; border: 1px solid rgba(29,184,122,0.3); border-radius: 20px; padding: 6px 16px; font-size: 12px; font-weight: 700; letter-spacing: 1px; margin-bottom: 24px; }
+  .hero h1 { font-size: clamp(36px, 6vw, 64px); font-weight: 800; color: #fff; letter-spacing: -2px; line-height: 1.05; margin-bottom: 16px; }
+  .hero h1 span { color: #1db87a; }
+  .hero-tagline { font-size: clamp(16px, 2.5vw, 20px); color: rgba(255,255,255,0.6); margin-bottom: 40px; font-weight: 400; }
+  .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 56px; }
+  .btn-green { background: #1db87a; color: #fff; border: none; border-radius: 12px; padding: 15px 28px; font-size: 15px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s; }
+  .btn-green:hover { background: #17a368; }
+  .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.25); border-radius: 12px; padding: 15px 28px; font-size: 15px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.2s; }
+  .btn-outline:hover { border-color: #1db87a; color: #1db87a; }
+
+  /* Services strip */
+  .services-strip { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .service-pill { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 7px 14px; font-size: 13px; color: rgba(255,255,255,0.7); }
+
+  /* HOW IT WORKS */
+  .section { padding: 80px 24px; max-width: 1000px; margin: 0 auto; }
+  .section-label { font-size: 11px; font-weight: 700; color: #1db87a; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+  .section-title { font-size: clamp(28px, 4vw, 42px); font-weight: 800; letter-spacing: -1px; margin-bottom: 14px; color: #0a1f2e; }
+  .section-sub { font-size: 16px; color: #666; max-width: 560px; line-height: 1.6; margin-bottom: 50px; }
+
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px; }
+  .step-card { background: #f8fffe; border: 1.5px solid #c8f0de; border-radius: 18px; padding: 28px 24px; }
+  .step-num { width: 38px; height: 38px; background: #0a1f2e; color: #1db87a; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; margin-bottom: 16px; }
+  .step-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #0a1f2e; }
+  .step-desc { font-size: 14px; color: #666; line-height: 1.6; }
+
+  /* SERVICES */
+  .services-section { background: #f5f7fa; padding: 80px 24px; }
+  .services-inner { max-width: 1000px; margin: 0 auto; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; }
+  .service-card { background: #fff; border-radius: 16px; padding: 22px 16px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .service-icon { font-size: 32px; margin-bottom: 10px; }
+  .service-name { font-size: 13px; font-weight: 700; color: #0a1f2e; margin-bottom: 4px; }
+  .service-price { font-size: 12px; color: #1db87a; font-weight: 600; }
+
+  /* YOUTH SECTION */
+  .youth-section { background: #0a1f2e; padding: 80px 24px; }
+  .youth-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .youth-label { font-size: 11px; font-weight: 700; color: #1db87a; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+  .youth-title { font-size: clamp(26px, 3.5vw, 38px); font-weight: 800; color: #fff; letter-spacing: -1px; margin-bottom: 16px; line-height: 1.1; }
+  .youth-title span { color: #1db87a; }
+  .youth-desc { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 28px; }
+  .perks { display: flex; flex-direction: column; gap: 12px; }
+  .perk { display: flex; align-items: flex-start; gap: 12px; }
+  .perk-dot { width: 22px; height: 22px; background: #1db87a; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+  .perk-text { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+  .youth-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .stat-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 24px; text-align: center; }
+  .stat-val { font-size: 36px; font-weight: 800; color: #1db87a; }
+  .stat-lbl { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+
+  /* WAITLIST */
+  .waitlist-section { padding: 80px 24px; background: #fff; }
+  .waitlist-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+  .waitlist-inner .section-sub { margin: 0 auto 40px; }
+  .tabs { display: flex; background: #f0f0f0; border-radius: 12px; padding: 4px; gap: 4px; margin-bottom: 28px; }
+  .tab { flex: 1; padding: 11px; border: none; background: transparent; border-radius: 9px; font-size: 14px; font-weight: 600; cursor: pointer; color: #888; transition: all 0.2s; }
+  .tab.active { background: #fff; color: #0a1f2e; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+  .form-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
+  .form-group input { border: 1.5px solid #e0e0e0; border-radius: 10px; padding: 14px 16px; font-size: 15px; outline: none; transition: border-color 0.2s; }
+  .form-group input:focus { border-color: #1db87a; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .btn-submit { background: #1db87a; color: #fff; border: none; border-radius: 10px; padding: 15px; font-size: 15px; font-weight: 700; cursor: pointer; width: 100%; margin-top: 4px; transition: background 0.2s; }
+  .btn-submit:hover { background: #17a368; }
+  .form-note { font-size: 12px; color: #aaa; margin-top: 10px; }
+  .success-msg { background: #f0faf5; border: 1.5px solid #1db87a; border-radius: 12px; padding: 20px; text-align: center; display: none; }
+  .success-msg .icon { font-size: 32px; margin-bottom: 8px; }
+  .success-msg p { font-size: 15px; font-weight: 600; color: #0a1f2e; }
+  .success-msg span { font-size: 13px; color: #666; }
+
+  /* FOOTER */
+  footer { background: #0a1f2e; padding: 32px 24px; text-align: center; }
+  .footer-logo { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+  .footer-logo span { color: #1db87a; }
+  .footer-tagline { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+  .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 20px; }
+  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; }
+  .footer-links a:hover { color: #1db87a; }
+  .footer-copy { font-size: 11px; color: rgba(255,255,255,0.25); }
+
+  @media (max-width: 600px) {
+    .youth-inner { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+    .youth-stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Yard<span>Rush</span><span class="nav-ca">.ca</span></div>
+  <a class="nav-cta" href="#waitlist">Join the Waitlist</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">🌿 Now recruiting in Saint-Jean-sur-Richelieu</div>
+  <h1>Your yard.<br><span>Handled.</span></h1>
+  <p class="hero-tagline">To the outside and beyond!</p>
+  <div class="hero-buttons">
+    <a class="btn-green" href="#waitlist">Book a Service</a>
+    <a class="btn-outline" href="#workers">Earn Money This Summer</a>
+  </div>
+  <div class="services-strip">
+    <span class="service-pill">🌿 Grass Cutting</span>
+    <span class="service-pill">❄️ Snow Removal</span>
+    <span class="service-pill">🍂 Leaf Clean Up</span>
+    <span class="service-pill">🗑️ Bin Cleaning</span>
+    <span class="service-pill">🔧 Tire Changes</span>
+    <span class="service-pill">🚗 Car Cleaning</span>
+    <span class="service-pill">🪣 Gutter Cleaning</span>
+    <span class="service-pill">🧹 Sweeping</span>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div style="background:#fff; padding: 80px 24px;">
+  <div style="max-width:1000px; margin: 0 auto;">
+    <div class="section-label">How it works</div>
+    <div class="section-title">Done in minutes,<br>not days.</div>
+    <p class="section-sub">No calls, no waiting. Request a service, get matched with a local youth worker, and track everything in real time.</p>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-title">Choose your service</div>
+        <div class="step-desc">Pick from our full list of outdoor and home services. Configure the details — yard size, vehicle type, which bins — and get an instant price.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-title">Get matched instantly</div>
+        <div class="step-desc">We connect you with a verified local youth worker nearby. See their profile, rating, and estimated arrival time in real time.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-title">Track the job live</div>
+        <div class="step-desc">Watch your job status update from assigned → in progress → done. Your worker sends a completion photo when finished.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <div class="step-title">Rate your worker</div>
+        <div class="step-desc">Leave a rating after every job. Payment is handled automatically — no cash needed, no awkward conversations.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div class="services-section">
+  <div class="services-inner">
+    <div class="section-label">Services</div>
+    <div class="section-title">Outside and beyond.</div>
+    <p class="section-sub" style="margin-bottom:40px;">From your lawn to your car — we cover it all, year round.</p>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon">🌿</div><div class="service-name">Grass Cutting</div><div class="service-price">From $25</div></div>
+      <div class="service-card"><div class="service-icon">❄️</div><div class="service-name">Snow Removal</div><div class="service-price">From $30</div></div>
+      <div class="service-card"><div class="service-icon">🍂</div><div class="service-name">Leaf Clean Up</div><div class="service-price">From $20</div></div>
+      <div class="service-card"><div class="service-icon">🪣</div><div class="service-name">Gutter Cleaning</div><div class="service-price">From $45</div></div>
+      <div class="service-card"><div class="service-icon">🧹</div><div class="service-name">Sweeping</div><div class="service-price">From $15</div></div>
+      <div class="service-card"><div class="service-icon">🗑️</div><div class="service-name">Bin Cleaning</div><div class="service-price">From $15</div></div>
+      <div class="service-card"><div class="service-icon">🔧</div><div class="service-name">Tire Change</div><div class="service-price">From $45</div></div>
+      <div class="service-card"><div class="service-icon">🚗</div><div class="service-name">Car Cleaning</div><div class="service-price">From $25</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- YOUTH SECTION -->
+<div class="youth-section" id="workers">
+  <div class="youth-inner">
+    <div>
+      <div class="youth-label">For young workers</div>
+      <div class="youth-title">Make real money<br>in your <span>neighbourhood.</span></div>
+      <p class="youth-desc">YardRush connects motivated teenagers and young adults with homeowners who need help — all summer long and all winter too. Bring your own equipment, set your own schedule, and start earning.</p>
+      <div class="perks">
+        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text">Set your own availability — work when it suits you</div></div>
+        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text">Keep 85% of every job — we only take a small 15% fee</div></div>
+        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text">Build your reputation with ratings and reviews</div></div>
+        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text">Get paid fast — no chasing cash from customers</div></div>
+        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text">Work year-round — lawn season and snow season</div></div>
+      </div>
+    </div>
+    <div class="youth-stats">
+      <div class="stat-box"><div class="stat-val">85%</div><div class="stat-lbl">Goes to you</div></div>
+      <div class="stat-box"><div class="stat-val">8+</div><div class="stat-lbl">Services to offer</div></div>
+      <div class="stat-box"><div class="stat-val">⭐</div><div class="stat-lbl">Build your rating</div></div>
+      <div class="stat-box"><div class="stat-val">📍</div><div class="stat-lbl">Stay local</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- WAITLIST -->
+<div class="waitlist-section" id="waitlist">
+  <div class="waitlist-inner">
+    <div class="section-label">Early access</div>
+    <div class="section-title">Be first in line.</div>
+    <p class="section-sub">YardRush is launching soon in Saint-Jean-sur-Richelieu. Join the waitlist as a customer or a worker and we'll reach out the moment we go live.</p>
+
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('customer')">🏠 I need services</button>
+      <button class="tab" onclick="switchTab('worker')">👷 I want to work</button>
+    </div>
+
+    <div id="form-customer">
+      <div class="form-group">
+        <div class="form-row">
+          <input type="text" placeholder="First name" id="c-first">
+          <input type="text" placeholder="Last name" id="c-last">
+        </div>
+        <input type="email" placeholder="Email address" id="c-email">
+        <input type="text" placeholder="Your neighbourhood or street (optional)" id="c-area">
+      </div>
+      <button class="btn-submit" onclick="submitForm('customer')">Join Customer Waitlist →</button>
+      <p class="form-note">No spam. We'll only email you when YardRush launches in your area.</p>
+    </div>
+
+    <div id="form-worker" style="display:none;">
+      <div class="form-group">
+        <div class="form-row">
+          <input type="text" placeholder="First name" id="w-first">
+          <input type="text" placeholder="Last name" id="w-last">
+        </div>
+        <input type="email" placeholder="Email address" id="w-email">
+        <input type="text" placeholder="Your age" id="w-age">
+        <input type="text" placeholder="Services you can offer (e.g. lawn mowing, snow removal)" id="w-services">
+      </div>
+      <button class="btn-submit" onclick="submitForm('worker')">Join Worker Waitlist →</button>
+      <p class="form-note">We'll reach out with everything you need to get started earning.</p>
+    </div>
+
+    <div class="success-msg" id="success-msg">
+      <div class="icon">🎉</div>
+      <p>You're on the list!</p>
+      <span>We'll be in touch as soon as YardRush launches in Saint-Jean-sur-Richelieu.</span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Yard<span>Rush</span></div>
+  <div class="footer-tagline">To the outside and beyond!</div>
+  <div class="footer-links">
+    <a href="#waitlist">Join Waitlist</a>
+    <a href="#workers">Work With Us</a>
+    <a href="mailto:hello@yardrush.ca">hello@yardrush.ca</a>
+  </div>
+  <div class="footer-copy">© 2026 YardRush · yardrush.ca · Saint-Jean-sur-Richelieu, QC</div>
+</footer>
+
+<script>
+  function switchTab(tab) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab')[tab === 'customer' ? 0 : 1].classList.add('active');
+    document.getElementById('form-customer').style.display = tab === 'customer' ? 'block' : 'none';
+    document.getElementById('form-worker').style.display = tab === 'worker' ? 'block' : 'none';
+  }
+
+  function submitForm(type) {
+    const email = document.getElementById(type === 'customer' ? 'c-email' : 'w-email').value;
+    if (!email || !email.includes('@')) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+    document.getElementById('form-customer').style.display = 'none';
+    document.getElementById('form-worker').style.display = 'none';
+    document.getElementById('success-msg').style.display = 'block';
+  }
+</script>
+</body>
+</html>

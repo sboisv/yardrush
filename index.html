@@ -53,18 +53,18 @@
   .service-name { font-size: 13px; font-weight: 700; color: #0a1f2e; margin-bottom: 4px; }
   .service-price { font-size: 12px; color: #1db87a; font-weight: 600; }
 
-  /* YOUTH SECTION */
-  .youth-section { background: #0a1f2e; padding: 80px 24px; }
-  .youth-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-  .youth-label { font-size: 11px; font-weight: 700; color: #1db87a; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
-  .youth-title { font-size: clamp(26px, 3.5vw, 38px); font-weight: 800; color: #fff; letter-spacing: -1px; margin-bottom: 16px; line-height: 1.1; }
-  .youth-title span { color: #1db87a; }
-  .youth-desc { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 28px; }
+  /* provider SECTION */
+  .provider-section { background: #0a1f2e; padding: 80px 24px; }
+  .provider-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .provider-label { font-size: 11px; font-weight: 700; color: #1db87a; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+  .provider-title { font-size: clamp(26px, 3.5vw, 38px); font-weight: 800; color: #fff; letter-spacing: -1px; margin-bottom: 16px; line-height: 1.1; }
+  .provider-title span { color: #1db87a; }
+  .provider-desc { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 28px; }
   .perks { display: flex; flex-direction: column; gap: 12px; }
   .perk { display: flex; align-items: flex-start; gap: 12px; }
   .perk-dot { width: 22px; height: 22px; background: #1db87a; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 1px; }
   .perk-text { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.5; }
-  .youth-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .provider-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .stat-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 24px; text-align: center; }
   .stat-val { font-size: 36px; font-weight: 800; color: #1db87a; }
   .stat-lbl { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 4px; }
@@ -99,9 +99,9 @@
   .footer-copy { font-size: 11px; color: rgba(255,255,255,0.25); }
 
   @media (max-width: 600px) {
-    .youth-inner { grid-template-columns: 1fr; gap: 40px; }
+    .provider-inner { grid-template-columns: 1fr; gap: 40px; }
     .form-row { grid-template-columns: 1fr; }
-    .youth-stats { grid-template-columns: 1fr 1fr; }
+    .provider-stats { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
@@ -115,12 +115,12 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-badge">🌿 Now recruiting in Saint-Bruno-de-Montarville</div>
-  <h1>Your yard.<br><span>Handled.</span></h1>
+  <div class="hero-badge">🌿 Local help, right in Saint-Bruno-de-Montarville</div>
+  <h1>Your yard.<br><span>Connected.</span></h1>
   <p class="hero-tagline">To the outside and beyond!</p>
   <div class="hero-buttons">
-    <a class="btn-green" href="#waitlist">Book a Service</a>
-    <a class="btn-outline" href="#workers">Earn Money This Summer</a>
+    <a class="btn-green" href="#waitlist">Browse Services</a>
+    <a class="btn-outline" href="#providers">Earn Money This Summer</a>
   </div>
   <div class="services-strip">
     <span class="service-pill">🌿 Grass Cutting</span>
@@ -140,27 +140,27 @@
   <div style="max-width:1000px; margin: 0 auto;">
     <div class="section-label">How it works</div>
     <div class="section-title">Done in minutes,<br>not days.</div>
-    <p class="section-sub">No calls, no waiting. Request a service, get matched with a local youth worker, and track everything in real time.</p>
+    <p class="section-sub">No calls, no waiting. Choose a service, get connected with a local independent providers, and coordinate to track progress.</p>
     <div class="steps">
       <div class="step-card">
         <div class="step-num">1</div>
         <div class="step-title">Choose your service</div>
-        <div class="step-desc">Pick from our full list of outdoor and home services. Configure the details — yard size, vehicle type, which bins — and get an instant price.</div>
+        <div class="step-desc">Pick from our full list of outdoor and home services. Configure the details — yard size, vehicle type, which bins — and submit.</div>
       </div>
       <div class="step-card">
         <div class="step-num">2</div>
-        <div class="step-title">Get matched instantly</div>
-        <div class="step-desc">We connect you with a verified local youth worker nearby. See their profile, rating, and estimated arrival time in real time.</div>
+        <div class="step-title">Connect with available local independent providers</div>
+        <div class="step-desc">You can connect with available local independent providers nearby. See their profile, rating, and estimated arrival time.</div>
       </div>
       <div class="step-card">
         <div class="step-num">3</div>
-        <div class="step-title">Track the job live</div>
-        <div class="step-desc">Watch your job status update from assigned → in progress → done. Your worker sends a completion photo when finished.</div>
+        <div class="step-title">Coordinate directly with your provider to learn about progress.</div>
+        <div class="step-desc">Coordinate directly with your provider as the work progresses. Your independent provider may share updates directly with you.</div>
       </div>
       <div class="step-card">
         <div class="step-num">4</div>
-        <div class="step-title">Rate your worker</div>
-        <div class="step-desc">Leave a rating after every job. Payment is handled automatically — no cash needed, no awkward conversations.</div>
+        <div class="step-title">Leave feedback after the job</div>
+        <div class="step-desc">Leave a rating after every job. Payment is arranged directly between you and the provider.</div>
       </div>
     </div>
   </div>
@@ -171,7 +171,7 @@
   <div class="services-inner">
     <div class="section-label">Services</div>
     <div class="section-title">Outside and beyond.</div>
-    <p class="section-sub" style="margin-bottom:40px;">From your lawn to your car — we cover it all, year round.</p>
+    <p class="section-sub" style="margin-bottom:40px;">From your lawn to your car — YardRush connects you to year-round local help.</p>
     <div class="services-grid">
       <div class="service-card"><div class="service-icon">🌿</div><div class="service-name">Grass Cutting</div><div class="service-price"></div></div>
       <div class="service-card"><div class="service-icon">❄️</div><div class="service-name">Snow Removal</div><div class="service-price"></div></div>
@@ -186,25 +186,24 @@
   </div>
 </div>
 
-<!-- YOUTH SECTION -->
-<div class="youth-section" id="workers">
-  <div class="youth-inner">
+<!-- Independent Provider SECTION -->
+<div class="provider-section" id="provider">
+  <div class="provider-inner">
     <div>
-      <div class="youth-label">For young workers</div>
-      <div class="youth-title">Make real money<br>in your <span>neighbourhood.</span></div>
-      <p class="youth-desc">YardRush connects motivated teenagers and young adults with homeowners who need help — all summer long and all winter too. Bring your own equipment, set your own schedule, and start earning.</p>
+      <div class="provider-label">For independent providers</div>
+      <div class="provider-title">Make real money<br>in your <span>neighbourhood.</span></div>
+      <p class="provider-desc">YardRush is a platform where local individuals can offer services to their community — all summer long and all winter too. Provide your own equipment, set your own schedule, and start.</p>
       <div class="perks">
         <div class="perk"><div class="perk-dot">✓</div><div class="perk-text">Set your own availability — work when it suits you</div></div>
-        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text">Keep 85% of every job — we only take a small 15% fee</div></div>
+        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text">Providers determine their own pricing. YardRush may introduce fees in the future as the platform evolves.</div></div>
         <div class="perk"><div class="perk-dot">✓</div><div class="perk-text">Build your reputation with ratings and reviews</div></div>
-        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text">Get paid fast — no chasing cash from customers</div></div>
+        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text">Arrange payments directly with customers</div></div>
         <div class="perk"><div class="perk-dot">✓</div><div class="perk-text">Work year-round — lawn season and snow season</div></div>
       </div>
     </div>
-    <div class="youth-stats">
-      <div class="stat-box"><div class="stat-val">85%</div><div class="stat-lbl">Goes to you</div></div>
+    <div class="provider-stats">
       <div class="stat-box"><div class="stat-val">8+</div><div class="stat-lbl">Services to offer</div></div>
-      <div class="stat-box"><div class="stat-val">⭐</div><div class="stat-lbl">Build your rating</div></div>
+      <div class="stat-box"><div class="stat-val">⭐</div><div class="stat-lbl">Grow your reputation through reviews</div></div>
       <div class="stat-box"><div class="stat-val">📍</div><div class="stat-lbl">Stay local</div></div>
     </div>
   </div>
@@ -215,11 +214,11 @@
   <div class="waitlist-inner">
     <div class="section-label">Early access</div>
     <div class="section-title">Be first in line.</div>
-    <p class="section-sub">YardRush is launching soon in Saint-Bruno-de-Montarville. Join the waitlist as a customer or a worker and we'll reach out the moment we go live.</p>
+    <p class="section-sub">YardRush is launching soon in Saint-Bruno-de-Montarville. Join the waitlist as a customer or an independent provider and stay tuned for the moment we go live.</p>
 
     <div class="tabs">
       <button class="tab active" onclick="switchTab('customer')">🏠 I need services</button>
-      <button class="tab" onclick="switchTab('worker')">👷 I want to work</button>
+      <button class="tab" onclick="switchTab('provider')">👷 I want to work</button>
     </div>
 
     <div id="form-customer">
@@ -235,7 +234,7 @@
       <p class="form-note">No spam. We'll only email you when YardRush launches in your area.</p>
     </div>
 
-    <div id="form-worker" style="display:none;">
+    <div id="form-provider" style="display:none;">
       <div class="form-group">
         <div class="form-row">
           <input type="text" placeholder="First name" id="w-first">
@@ -245,7 +244,7 @@
         <input type="text" placeholder="Your age" id="w-age">
         <input type="text" placeholder="Services you can offer (e.g. lawn mowing, snow removal)" id="w-services">
       </div>
-      <button class="btn-submit" onclick="submitForm('worker')">Join Worker Waitlist →</button>
+      <button class="btn-submit" onclick="submitForm('provider')">Join Provider Waitlist →</button>
       <p class="form-note">We'll reach out with everything you need to get started earning.</p>
     </div>
 
@@ -261,11 +260,18 @@
 <footer>
   <div class="footer-logo">Yard<span>Rush</span></div>
   <div class="footer-tagline">To the outside and beyond!</div>
+
+  <!-- PLATFORM DISCLAIMER -->
+  <div class="footer-disclaimer">
+    YardRush is a platform that connects users with independent service providers. YardRush does not directly provide services.
+  </div>
+
   <div class="footer-links">
     <a href="#waitlist">Join Waitlist</a>
-    <a href="#workers">Work With Us</a>
+    <a href="#providers">Work With Us</a>
     <a href="mailto:info@yardrush.ca">info@yardrush.ca</a>
   </div>
+
   <div class="footer-copy">© 2026 YardRush · yardrush.ca · Saint-Bruno-de-Montarville, QC</div>
 </footer>
 
@@ -274,7 +280,7 @@
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     document.querySelectorAll('.tab')[tab === 'customer' ? 0 : 1].classList.add('active');
     document.getElementById('form-customer').style.display = tab === 'customer' ? 'block' : 'none';
-    document.getElementById('form-worker').style.display = tab === 'worker' ? 'block' : 'none';
+    document.getElementById('form-provider').style.display = tab === 'provider' ? 'block' : 'none';
   }
 
   function submitForm(type) {
@@ -284,7 +290,7 @@
       return;
     }
     document.getElementById('form-customer').style.display = 'none';
-    document.getElementById('form-worker').style.display = 'none';
+    document.getElementById('form-provider').style.display = 'none';
     document.getElementById('success-msg').style.display = 'block';
   }
 </script>

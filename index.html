@@ -115,7 +115,7 @@
 <!-- HERO -->
 <div class="hero">
   <div class="hero-badge" id="hero-badge">🌿 Local help, right in Saint-Bruno-de-Montarville</div>
-  <h1 id="hero-h1">Your yard.<br><span style="color:#1db87a" id="hero-h1-span">Connected.</span></h1>
+  <h1><span id="hero-h1-line1">Your yard.</span><br><span style="color:#1db87a" id="hero-h1-line2">Connected.</span></h1>
   <p class="hero-tagline" id="hero-tagline">To the outside and beyond!</p>
   <div class="hero-buttons">
     <a class="btn-green" href="#waitlist" id="hero-btn1">Browse Services</a>
@@ -271,7 +271,8 @@ const t = {
   en: {
     'nav-cta-text': 'Join the Waitlist',
     'hero-badge': '🌿 Local help, right in Saint-Bruno-de-Montarville',
-    'hero-h1': 'Your yard.<br><span style="color:#1db87a">Connected.</span>',
+    'hero-h1-line1': 'Your yard.',
+    'hero-h1-line2': 'Connected.',
     'hero-tagline': 'To the outside and beyond!',
     'hero-btn1': 'Browse Services',
     'hero-btn2': 'Earn This Season',
@@ -324,7 +325,8 @@ const t = {
   fr: {
     'nav-cta-text': 'Rejoindre la liste',
     'hero-badge': '🌿 Aide locale à Saint-Bruno-de-Montarville',
-    'hero-h1': 'Ton extérieur.<br><span style="color:#1db87a">Connecté.</span>',
+    'hero-h1-line1': 'Ton extérieur.',
+    'hero-h1-line2': 'Connecté.',
     'hero-tagline': 'À l\'extérieur et au-delà!',
     'hero-btn1': 'Voir les services',
     'hero-btn2': 'Gagner cet été',
@@ -338,7 +340,7 @@ const t = {
     'step3-title': 'Coordonne directement avec ton fournisseur',
     'step3-desc': 'Reste en contact avec ton fournisseur au fil des travaux. Il peut partager des mises à jour directement avec toi.',
     'step4-title': 'Laisse un avis après le travail',
-    'step4-desc': 'Évalue chaque fournisseur. Le paiement est convenu directement entre toi et le fournisseur.',
+    'step4-desc': 'Évalue chaque prestation. Le paiement est convenu directement entre toi et le fournisseur.',
     'svc-label': 'Services',
     'svc-title': 'À l\'extérieur et au-delà.',
     'svc-sub': 'De ton gazon à ta voiture — YardRush te connecte à de l\'aide locale, été comme hiver.',
@@ -395,6 +397,7 @@ function setLang(lang) {
 
   // Update all text IDs
   const ids = ['nav-cta-text','hero-badge','hero-tagline','hero-btn1','hero-btn2',
+    'hero-h1-line1','hero-h1-line2',
     'how-label','how-title','how-sub','step1-title','step1-desc','step2-title','step2-desc',
     'step3-title','step3-desc','step4-title','step4-desc','svc-label','svc-title','svc-sub',
     'prov-label','prov-title','prov-desc','perk1','perk2','perk3','perk4','perk5',

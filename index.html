@@ -70,7 +70,7 @@
   .tab { flex: 1; padding: 11px; border: none; background: transparent; border-radius: 9px; font-size: 14px; font-weight: 600; cursor: pointer; color: #888; transition: all 0.2s; }
   .tab.active { background: #fff; color: #0a1f2e; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
   .form-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
-  .form-group input { border: 1.5px solid #e0e0e0; border-radius: 10px; padding: 14px 16px; font-size: 15px; outline: none; transition: border-color 0.2s; }
+  .form-group input { border: 1.5px solid #e0e0e0; border-radius: 10px; padding: 14px 16px; font-size: 15px; outline: none; transition: border-color 0.2s; width: 100%; }
   .form-group input:focus { border-color: #1db87a; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   .btn-submit { background: #1db87a; color: #fff; border: none; border-radius: 10px; padding: 15px; font-size: 15px; font-weight: 700; cursor: pointer; width: 100%; margin-top: 4px; transition: background 0.2s; }
@@ -122,15 +122,15 @@
     <a class="btn-outline" href="#provider" id="hero-btn2">Earn This Season</a>
   </div>
   <div class="services-strip">
-    <span class="service-pill" data-en="🌿 Grass Cutting" data-fr="🌿 Tonte de gazon">🌿 Grass Cutting</span>
-    <span class="service-pill" data-en="❄️ Snow Removal" data-fr="❄️ Déneigement">❄️ Snow Removal</span>
-    <span class="service-pill" data-en="🍂 Leaf Clean Up" data-fr="🍂 Ramassage de feuilles">🍂 Leaf Clean Up</span>
-    <span class="service-pill" data-en="🗑️ Bin Cleaning" data-fr="🗑️ Nettoyage de bacs">🗑️ Bin Cleaning</span>
-    <span class="service-pill" data-en="🔧 Tire Changes" data-fr="🔧 Changement de pneus">🔧 Tire Changes</span>
-    <span class="service-pill" data-en="🚗 Car Cleaning" data-fr="🚗 Nettoyage de voiture">🚗 Car Cleaning</span>
-    <span class="service-pill" data-en="🪣 Gutter Cleaning" data-fr="🪣 Nettoyage de gouttières">🪣 Gutter Cleaning</span>
-    <span class="service-pill" data-en="🧹 Sweeping" data-fr="🧹 Balayage">🧹 Sweeping</span>
-    <span class="service-pill" data-en="🖌️ Painting" data-fr="🖌️ Peinture">🖌️ Painting</span>
+    <span class="service-pill">🌿 Grass Cutting</span>
+    <span class="service-pill">❄️ Snow Removal</span>
+    <span class="service-pill">🍂 Leaf Clean Up</span>
+    <span class="service-pill">🗑️ Bin Cleaning</span>
+    <span class="service-pill">🔧 Tire Changes</span>
+    <span class="service-pill">🚗 Car Cleaning</span>
+    <span class="service-pill">🪣 Gutter Cleaning</span>
+    <span class="service-pill">🧹 Sweeping</span>
+    <span class="service-pill">🖌️ Painting</span>
   </div>
 </div>
 
@@ -172,15 +172,15 @@
     <div class="section-title" id="svc-title">Outside and beyond.</div>
     <p class="section-sub" id="svc-sub" style="margin-bottom:40px;">From your lawn to your car — YardRush connects you to year-round local help.</p>
     <div class="services-grid">
-      <div class="service-card"><div class="service-icon">🌿</div><div class="service-name" data-en="Grass Cutting" data-fr="Tonte de gazon">Grass Cutting</div></div>
-      <div class="service-card"><div class="service-icon">❄️</div><div class="service-name" data-en="Snow Removal" data-fr="Déneigement">Snow Removal</div></div>
-      <div class="service-card"><div class="service-icon">🍂</div><div class="service-name" data-en="Leaf Clean Up" data-fr="Ramassage de feuilles">Leaf Clean Up</div></div>
-      <div class="service-card"><div class="service-icon">🪣</div><div class="service-name" data-en="Gutter Cleaning" data-fr="Nettoyage de gouttières">Gutter Cleaning</div></div>
-      <div class="service-card"><div class="service-icon">🧹</div><div class="service-name" data-en="Sweeping" data-fr="Balayage">Sweeping</div></div>
-      <div class="service-card"><div class="service-icon">🗑️</div><div class="service-name" data-en="Bin Cleaning" data-fr="Nettoyage de bacs">Bin Cleaning</div></div>
-      <div class="service-card"><div class="service-icon">🔧</div><div class="service-name" data-en="Tire Change" data-fr="Changement de pneus">Tire Change</div></div>
-      <div class="service-card"><div class="service-icon">🚗</div><div class="service-name" data-en="Car Cleaning" data-fr="Nettoyage de voiture">Car Cleaning</div></div>
-      <div class="service-card"><div class="service-icon">🖌️</div><div class="service-name" data-en="Painting" data-fr="Peinture">Painting</div></div>
+      <div class="service-card"><div class="service-icon">🌿</div><div class="service-name">Grass Cutting</div></div>
+      <div class="service-card"><div class="service-icon">❄️</div><div class="service-name">Snow Removal</div></div>
+      <div class="service-card"><div class="service-icon">🍂</div><div class="service-name">Leaf Clean Up</div></div>
+      <div class="service-card"><div class="service-icon">🪣</div><div class="service-name">Gutter Cleaning</div></div>
+      <div class="service-card"><div class="service-icon">🧹</div><div class="service-name">Sweeping</div></div>
+      <div class="service-card"><div class="service-icon">🗑️</div><div class="service-name">Bin Cleaning</div></div>
+      <div class="service-card"><div class="service-icon">🔧</div><div class="service-name">Tire Change</div></div>
+      <div class="service-card"><div class="service-icon">🚗</div><div class="service-name">Car Cleaning</div></div>
+      <div class="service-card"><div class="service-icon">🖌️</div><div class="service-name">Painting</div></div>
     </div>
   </div>
 </div>
@@ -214,35 +214,49 @@
     <div class="section-label" id="wl-label">Early access</div>
     <div class="section-title" id="wl-title">Be first in line.</div>
     <p class="section-sub" id="wl-sub">YardRush is launching soon in Saint-Bruno-de-Montarville. Join the waitlist as a customer or an independent provider and stay tuned for the moment we go live.</p>
+
     <div class="tabs">
       <button class="tab active" id="tab-customer" onclick="switchTab('customer')">🏠 I need services</button>
       <button class="tab" id="tab-provider" onclick="switchTab('provider')">👷 I want to work</button>
     </div>
+
+    <!-- CUSTOMER FORM -->
     <div id="form-customer">
-      <div class="form-group">
-        <div class="form-row">
-          <input type="text" id="c-first" placeholder="First name">
-          <input type="text" id="c-last" placeholder="Last name">
+      <form action="https://formspree.io/f/mrejyvav" method="POST" onsubmit="handleSubmit(event, 'customer')">
+        <input type="hidden" name="form-type" value="Customer Waitlist">
+        <input type="hidden" name="language" id="c-lang" value="English">
+        <div class="form-group">
+          <div class="form-row">
+            <input type="text" name="first-name" id="c-first" placeholder="First name">
+            <input type="text" name="last-name" id="c-last" placeholder="Last name">
+          </div>
+          <input type="email" name="email" id="c-email" placeholder="Email address" required>
+          <input type="text" name="neighbourhood" id="c-area" placeholder="Your neighbourhood or street (optional)">
         </div>
-        <input type="email" id="c-email" placeholder="Email address">
-        <input type="text" id="c-area" placeholder="Your neighbourhood or street (optional)">
-      </div>
-      <button class="btn-submit" onclick="submitForm('customer')" id="btn-customer-submit">Join Customer Waitlist →</button>
-      <p class="form-note" id="note-customer">No spam. We'll only email you when YardRush launches in your area.</p>
+        <button type="submit" class="btn-submit" id="btn-customer-submit">Join Customer Waitlist →</button>
+        <p class="form-note" id="note-customer">No spam. We'll only email you when YardRush launches in your area.</p>
+      </form>
     </div>
+
+    <!-- PROVIDER FORM -->
     <div id="form-provider" style="display:none;">
-      <div class="form-group">
-        <div class="form-row">
-          <input type="text" id="w-first" placeholder="First name">
-          <input type="text" id="w-last" placeholder="Last name">
+      <form action="https://formspree.io/f/mrejyvav" method="POST" onsubmit="handleSubmit(event, 'provider')">
+        <input type="hidden" name="form-type" value="Provider Waitlist">
+        <input type="hidden" name="language" id="w-lang" value="English">
+        <div class="form-group">
+          <div class="form-row">
+            <input type="text" name="first-name" id="w-first" placeholder="First name">
+            <input type="text" name="last-name" id="w-last" placeholder="Last name">
+          </div>
+          <input type="email" name="email" id="w-email" placeholder="Email address" required>
+          <input type="text" name="age" id="w-age" placeholder="Your age">
+          <input type="text" name="services" id="w-services" placeholder="Services you can offer (e.g. lawn mowing, snow removal)">
         </div>
-        <input type="email" id="w-email" placeholder="Email address">
-        <input type="text" id="w-age" placeholder="Your age">
-        <input type="text" id="w-services" placeholder="Services you can offer (e.g. lawn mowing, snow removal)">
-      </div>
-      <button class="btn-submit" onclick="submitForm('provider')" id="btn-provider-submit">Join Provider Waitlist →</button>
-      <p class="form-note" id="note-provider">Stay tuned as we roll out so you can get started.</p>
+        <button type="submit" class="btn-submit" id="btn-provider-submit">Join Provider Waitlist →</button>
+        <p class="form-note" id="note-provider">Stay tuned as we roll out so you can get started.</p>
+      </form>
     </div>
+
     <div class="success-msg" id="success-msg">
       <div class="icon">🎉</div>
       <p id="success-title">You're on the list!</p>
@@ -320,87 +334,83 @@ const t = {
     'c-area': 'Your neighbourhood or street (optional)',
     'w-first': 'First name', 'w-last': 'Last name', 'w-email': 'Email address',
     'w-age': 'Your age', 'w-services': 'Services you can offer (e.g. lawn mowing, snow removal)',
-    'alert': 'Please enter a valid email address.'
+    'lang-value': 'English'
   },
   fr: {
     'nav-cta-text': 'Rejoindre la liste',
     'hero-badge': '🌿 Aide locale à Saint-Bruno-de-Montarville',
     'hero-h1-line1': 'Ton extérieur.',
     'hero-h1-line2': 'Connecté.',
-    'hero-tagline': 'À l\'extérieur et au-delà!',
+    'hero-tagline': "À l'extérieur et au-delà!",
     'hero-btn1': 'Voir les services',
     'hero-btn2': 'Gagne cette saison',
     'how-label': 'Comment ça marche',
     'how-title': 'Réglé en minutes,<br>pas en jours.',
-    'how-sub': 'Pas d\'appels, pas d\'attente. Choisis un service, connecte-toi avec des fournisseurs locaux indépendants et informe-toi sur l\'avancement.',
+    'how-sub': "Pas d'appels, pas d'attente. Choisis un service, connecte-toi avec des fournisseurs locaux indépendants et informe-toi sur l'avancement.",
     'step1-title': 'Choisis ton service',
-    'step1-desc': 'Sélectionne parmi notre liste complète. Configure les détails — superficie, type de véhicule, type de bac — et soumets ta demande.',
+    'step1-desc': "Sélectionne parmi notre liste complète. Configure les détails — superficie, type de véhicule, type de bac — et soumets ta demande.",
     'step2-title': 'Connecte-toi avec un fournisseur local',
-    'step2-desc': 'Consulte les profils des fournisseurs indépendants disponibles près de chez toi. Vois leurs évaluations et disponibilités.',
+    'step2-desc': "Consulte les profils des fournisseurs indépendants disponibles près de chez toi. Vois leurs évaluations et disponibilités.",
     'step3-title': 'Coordonne directement avec ton fournisseur',
-    'step3-desc': 'Reste en contact avec ton fournisseur au fil des travaux. Il peut partager des mises à jour directement avec toi.',
+    'step3-desc': "Reste en contact avec ton fournisseur au fil des travaux. Il peut partager des mises à jour directement avec toi.",
     'step4-title': 'Laisse un avis après le travail',
-    'step4-desc': 'Évalue chaque prestation. Le paiement est convenu directement entre toi et le fournisseur.',
+    'step4-desc': "Évalue chaque prestation. Le paiement est convenu directement entre toi et le fournisseur.",
     'svc-label': 'Services',
-    'svc-title': 'À l\'extérieur et au-delà.',
-    'svc-sub': 'De ton gazon à ta voiture — YardRush te connecte à de l\'aide locale, été comme hiver.',
+    'svc-title': "À l'extérieur et au-delà.",
+    'svc-sub': "De ton gazon à ta voiture — YardRush te connecte à de l'aide locale, été comme hiver.",
     'prov-label': 'Pour les fournisseurs indépendants',
     'prov-title': 'Gagne localement<br>dans ton <span style="color:#1db87a">quartier.</span>',
-    'prov-desc': 'YardRush est une plateforme où des individus locaux peuvent offrir leurs services à leur communauté — été comme hiver. Apporte ton propre équipement, fixe ton horaire et commence.',
+    'prov-desc': "YardRush est une plateforme où des individus locaux peuvent offrir leurs services à leur communauté — été comme hiver. Apporte ton propre équipement, fixe ton horaire et commence.",
     'perk1': 'Fixe tes propres disponibilités — travaille quand tu veux',
     'perk2': 'Les fournisseurs déterminent leurs propres tarifs (YardRush pourrait introduire des frais dans le futur)',
     'perk3': 'Bâtis ta réputation grâce aux évaluations et aux avis',
     'perk4': 'Arrange les paiements directement avec tes clients',
-    'perk5': 'Travaille toute l\'année — saison de tonte, de déneigement et tout ce qui est entre les deux',
+    'perk5': "Travaille toute l'année — saison de tonte, de déneigement et tout ce qui est entre les deux",
     'stat1': 'Services à offrir',
     'stat2': 'Bâtis ta réputation',
     'stat3': 'Reste local',
     'wl-label': 'Accès anticipé',
     'wl-title': 'Sois parmi les premiers.',
-    'wl-sub': 'YardRush arrive bientôt à Saint-Bruno-de-Montarville. Inscris-toi sur la liste d\'attente en tant que client ou fournisseur indépendant.',
-    'tab-customer': '🏠 J\'ai besoin de services',
+    'wl-sub': "YardRush arrive bientôt à Saint-Bruno-de-Montarville. Inscris-toi sur la liste d'attente en tant que client ou fournisseur indépendant.",
+    'tab-customer': "🏠 J'ai besoin de services",
     'tab-provider': '👷 Je veux travailler',
     'btn-customer-submit': 'Rejoindre la liste client →',
     'btn-provider-submit': 'Rejoindre la liste fournisseur →',
-    'note-customer': 'Pas de spam. On t\'écrira uniquement au lancement de YardRush dans ta région.',
-    'note-provider': 'On te contactera avec tout ce qu\'il faut pour commencer.',
+    'note-customer': "Pas de spam. On t'écrira uniquement au lancement de YardRush dans ta région.",
+    'note-provider': "On te contactera avec tout ce qu'il faut pour commencer.",
     'success-title': 'Tu es sur la liste!',
     'success-sub': 'On te contactera dès que YardRush sera lancé à Saint-Bruno-de-Montarville.',
-    'footer-tagline': 'À l\'extérieur et au-delà!',
-    'footer-disclaimer': 'YardRush est une plateforme qui met en relation les utilisateurs avec des fournisseurs de services indépendants. YardRush ne fournit pas directement les services et n\'est pas responsable de la qualité des travaux effectués par les fournisseurs indépendants.',
-    'footer-link1': 'Liste d\'attente',
+    'footer-tagline': "À l'extérieur et au-delà!",
+    'footer-disclaimer': "YardRush est une plateforme qui met en relation les utilisateurs avec des fournisseurs de services indépendants. YardRush ne fournit pas directement les services et n'est pas responsable de la qualité des travaux effectués par les fournisseurs indépendants.",
+    'footer-link1': "Liste d'attente",
     'footer-link2': 'Travailler avec nous',
     'c-first': 'Prénom', 'c-last': 'Nom', 'c-email': 'Adresse courriel',
     'c-area': 'Ton quartier ou ta rue (optionnel)',
     'w-first': 'Prénom', 'w-last': 'Nom', 'w-email': 'Adresse courriel',
     'w-age': 'Ton âge', 'w-services': 'Services que tu peux offrir (ex. tonte, déneigement)',
-    'alert': 'Veuillez entrer une adresse courriel valide.'
+    'lang-value': 'Français'
   }
 };
 
-// Service pill translations
 const pillFR = ['🌿 Tonte de gazon','❄️ Déneigement','🍂 Ramassage de feuilles','🗑️ Nettoyage de bacs','🔧 Changement de pneus','🚗 Nettoyage de voiture','🪣 Nettoyage de gouttières','🧹 Balayage','🖌️ Peinture'];
 const pillEN = ['🌿 Grass Cutting','❄️ Snow Removal','🍂 Leaf Clean Up','🗑️ Bin Cleaning','🔧 Tire Changes','🚗 Car Cleaning','🪣 Gutter Cleaning','🧹 Sweeping','🖌️ Painting'];
+const enNames = ['Grass Cutting','Snow Removal','Leaf Clean Up','Gutter Cleaning','Sweeping','Bin Cleaning','Tire Change','Car Cleaning','Painting'];
+const frNames = ['Tonte de gazon','Déneigement','Ramassage de feuilles','Nettoyage de gouttières','Balayage','Nettoyage de bacs','Changement de pneus','Nettoyage de voiture','Peinture'];
 
 let currentLang = 'en';
 let currentFormTab = 'customer';
-let alertMsg = t.en.alert;
 
 function setLang(lang) {
   currentLang = lang;
-  alertMsg = t[lang].alert;
   document.documentElement.lang = lang;
-
-  // Toggle buttons
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
   document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
 
-  // Update all text IDs
   const ids = ['nav-cta-text','hero-badge','hero-tagline','hero-btn1','hero-btn2',
-    'hero-h1-line1','hero-h1-line2',
-    'how-label','how-title','how-sub','step1-title','step1-desc','step2-title','step2-desc',
-    'step3-title','step3-desc','step4-title','step4-desc','svc-label','svc-title','svc-sub',
-    'prov-label','prov-title','prov-desc','perk1','perk2','perk3','perk4','perk5',
+    'hero-h1-line1','hero-h1-line2','how-label','how-title','how-sub',
+    'step1-title','step1-desc','step2-title','step2-desc','step3-title','step3-desc',
+    'step4-title','step4-desc','svc-label','svc-title','svc-sub','prov-label',
+    'prov-title','prov-desc','perk1','perk2','perk3','perk4','perk5',
     'stat1','stat2','stat3','wl-label','wl-title','wl-sub','tab-customer','tab-provider',
     'btn-customer-submit','btn-provider-submit','note-customer','note-provider',
     'success-title','success-sub','footer-tagline','footer-disclaimer','footer-link1','footer-link2'];
@@ -410,23 +420,18 @@ function setLang(lang) {
     if (el) el.innerHTML = t[lang][id];
   });
 
-  // Update placeholders
   ['c-first','c-last','c-email','c-area','w-first','w-last','w-email','w-age','w-services'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.placeholder = t[lang][id];
   });
 
-  // Update service pills
-  const pills = document.querySelectorAll('.service-pill');
-  pills.forEach((p, i) => { p.textContent = lang === 'fr' ? pillFR[i] : pillEN[i]; });
+  // Update hidden language fields so Formspree shows which language was used
+  document.getElementById('c-lang').value = t[lang]['lang-value'];
+  document.getElementById('w-lang').value = t[lang]['lang-value'];
 
-  // Update service card names
-  const names = document.querySelectorAll('.service-name');
-  const enNames = ['Grass Cutting','Snow Removal','Leaf Clean Up','Gutter Cleaning','Sweeping','Bin Cleaning','Tire Change','Car Cleaning','Painting'];
-  const frNames = ['Tonte de gazon','Déneigement','Ramassage de feuilles','Nettoyage de gouttières','Balayage','Nettoyage de bacs','Changement de pneus','Nettoyage de voiture','Peinture'];
-  names.forEach((n, i) => { n.textContent = lang === 'fr' ? frNames[i] : enNames[i]; });
+  document.querySelectorAll('.service-pill').forEach((p, i) => { p.textContent = lang === 'fr' ? pillFR[i] : pillEN[i]; });
+  document.querySelectorAll('.service-name').forEach((n, i) => { n.textContent = lang === 'fr' ? frNames[i] : enNames[i]; });
 
-  // Re-apply active tab state
   switchTab(currentFormTab);
 }
 
@@ -438,12 +443,26 @@ function switchTab(tab) {
   document.getElementById('form-provider').style.display = tab === 'provider' ? 'block' : 'none';
 }
 
-function submitForm(type) {
-  const email = document.getElementById(type === 'customer' ? 'c-email' : 'w-email').value;
-  if (!email || !email.includes('@')) { alert(alertMsg); return; }
-  document.getElementById('form-customer').style.display = 'none';
-  document.getElementById('form-provider').style.display = 'none';
-  document.getElementById('success-msg').style.display = 'block';
+async function handleSubmit(e, type) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  try {
+    const res = await fetch('https://formspree.io/f/mrejyvav', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      document.getElementById('form-customer').style.display = 'none';
+      document.getElementById('form-provider').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    } else {
+      alert(currentLang === 'fr' ? 'Une erreur est survenue. Veuillez réessayer.' : 'Something went wrong. Please try again.');
+    }
+  } catch {
+    alert(currentLang === 'fr' ? 'Une erreur est survenue. Veuillez réessayer.' : 'Something went wrong. Please try again.');
+  }
 }
 </script>
 </body>

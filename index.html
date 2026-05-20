@@ -8,6 +8,8 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fff; color: #1a1a1a; }
 
+  .beta-banner { background: rgba(29,184,122,0.12); border-bottom: 1px solid rgba(29,184,122,0.25); text-align: center; padding: 9px 24px; font-size: 12px; font-weight: 600; color: #1db87a; letter-spacing: 0.2px; }
+
   nav { background: #0a1f2e; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
   .nav-logo { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
   .nav-logo span { color: #1db87a; }
@@ -42,23 +44,23 @@
   .step-desc { font-size: 14px; color: #666; line-height: 1.6; }
 
   .services-section { background: #f5f7fa; padding: 80px 24px; }
-  .services-inner { max-width: 1000px; margin: 0 auto; }
-  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; }
+  .services-inner { max-width: 1100px; margin: 0 auto; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
   .service-card { background: #fff; border-radius: 16px; padding: 22px 16px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
   .service-icon { font-size: 32px; margin-bottom: 10px; }
   .service-name { font-size: 13px; font-weight: 700; color: #0a1f2e; margin-bottom: 4px; }
 
-  .provider-section { background: #0a1f2e; padding: 80px 24px; }
-  .provider-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-  .provider-label { font-size: 11px; font-weight: 700; color: #1db87a; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
-  .provider-title { font-size: clamp(26px, 3.5vw, 38px); font-weight: 800; color: #fff; letter-spacing: -1px; margin-bottom: 16px; line-height: 1.1; }
-  .provider-title span { color: #1db87a; }
-  .provider-desc { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 28px; }
+  .community-section { background: #0a1f2e; padding: 80px 24px; }
+  .community-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .community-label { font-size: 11px; font-weight: 700; color: #1db87a; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+  .community-title { font-size: clamp(26px, 3.5vw, 38px); font-weight: 800; color: #fff; letter-spacing: -1px; margin-bottom: 16px; line-height: 1.1; }
+  .community-title span { color: #1db87a; }
+  .community-desc { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 28px; }
   .perks { display: flex; flex-direction: column; gap: 12px; }
   .perk { display: flex; align-items: flex-start; gap: 12px; }
   .perk-dot { width: 22px; height: 22px; background: #1db87a; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 1px; }
   .perk-text { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.5; }
-  .provider-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .community-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .stat-box { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 24px; text-align: center; }
   .stat-val { font-size: 36px; font-weight: 800; color: #1db87a; }
   .stat-lbl { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 4px; }
@@ -88,17 +90,21 @@
   .footer-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap; }
   .footer-links a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; }
   .footer-links a:hover { color: #1db87a; }
+  .footer-disclaimer { font-size: 11px; color: rgba(255,255,255,0.35); max-width: 760px; margin: 0 auto 16px; line-height: 1.7; }
   .footer-copy { font-size: 11px; color: rgba(255,255,255,0.25); }
 
   @media (max-width: 600px) {
-    .provider-inner { grid-template-columns: 1fr; gap: 40px; }
+    .community-inner { grid-template-columns: 1fr; gap: 40px; }
     .form-row { grid-template-columns: 1fr; }
-    .provider-stats { grid-template-columns: 1fr 1fr; }
+    .community-stats { grid-template-columns: 1fr 1fr; }
     .nav-cta { display: none; }
   }
 </style>
 </head>
 <body>
+
+<!-- BETA BANNER -->
+<div class="beta-banner" id="beta-banner">🌱 YardRush is currently in Beta — features and services evolve as we grow.</div>
 
 <!-- NAV -->
 <nav>
@@ -114,12 +120,12 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-badge" id="hero-badge">🌿 Local help, right in Saint-Bruno-de-Montarville</div>
-  <h1><span style="color:#ffffff" id="hero-h1-line1">Your yard.</span><br><span style="color:#1db87a" id="hero-h1-line2">Connected.</span></h1>
+  <div class="hero-badge" id="hero-badge">🌿 Community Job Board · Saint-Bruno-de-Montarville</div>
+  <h1><span style="color:#ffffff" id="hero-h1-line1">Your neighbourhood.</span><br><span style="color:#1db87a" id="hero-h1-line2">Connected.</span></h1>
   <p class="hero-tagline" id="hero-tagline">To the outside and beyond!</p>
   <div class="hero-buttons">
-    <a class="btn-green" href="#waitlist" id="hero-btn1">Browse Services</a>
-    <a class="btn-outline" href="#provider" id="hero-btn2">Earn This Season</a>
+    <a class="btn-green" href="#waitlist" id="hero-btn1">Post a Job</a>
+    <a class="btn-outline" href="#waitlist" id="hero-btn2">Pick Up a Job</a>
   </div>
   <div class="services-strip">
     <span class="service-pill">🌿 Grass Cutting</span>
@@ -129,8 +135,14 @@
     <span class="service-pill">🔧 Tire Changes</span>
     <span class="service-pill">🚗 Car Cleaning</span>
     <span class="service-pill">🪣 Gutter Cleaning</span>
+    <span class="service-pill">🪟 Window Cleaning</span>
+    <span class="service-pill">🌸 Spring Cleaning</span>
+    <span class="service-pill">♻️ Metal Recycling</span>
+    <span class="service-pill">🚿 Power Washing</span>
     <span class="service-pill">🧹 Sweeping</span>
     <span class="service-pill">🖌️ Painting</span>
+    <span class="service-pill">🪴 Gardening</span>
+    <span class="service-pill">💧 Watering</span>
   </div>
 </div>
 
@@ -138,28 +150,28 @@
 <div style="background:#fff; padding: 80px 24px;">
   <div style="max-width:1000px; margin: 0 auto;">
     <div class="section-label" id="how-label">How it works</div>
-    <div class="section-title" id="how-title">Done in minutes,<br>not days.</div>
-    <p class="section-sub" id="how-sub">No calls, no waiting. Choose a service, get connected with local independent providers, and coordinate to track progress.</p>
+    <div class="section-title" id="how-title">Post. Pick up. Done.</div>
+    <p class="section-sub" id="how-sub">No agencies, no middlemen. Post what you need or browse jobs in your neighbourhood and help a neighbour out. Payments are arranged directly between community members.</p>
     <div class="steps">
       <div class="step-card">
         <div class="step-num">1</div>
-        <div class="step-title" id="step1-title">Choose your service</div>
-        <div class="step-desc" id="step1-desc">Pick from our full list of services. Configure the details — yard size, vehicle type, bin type — and submit.</div>
+        <div class="step-title" id="step1-title">Post a job</div>
+        <div class="step-desc" id="step1-desc">Describe what you need, choose a service type, and post it to the community board for your neighbours to see.</div>
       </div>
       <div class="step-card">
         <div class="step-num">2</div>
-        <div class="step-title" id="step2-title">Connect with available local independent providers</div>
-        <div class="step-desc" id="step2-desc">You can connect with available local independent providers nearby. See their profile, rating, and estimated arrival time.</div>
+        <div class="step-title" id="step2-title">A neighbour picks it up</div>
+        <div class="step-desc" id="step2-desc">Community members browse open jobs and claim the ones they can help with. You'll be notified when someone picks up your job.</div>
       </div>
       <div class="step-card">
         <div class="step-num">3</div>
-        <div class="step-title" id="step3-title">Coordinate directly with your provider</div>
-        <div class="step-desc" id="step3-desc">Coordinate directly with your provider as the work progresses. Your independent provider may share updates directly with you.</div>
+        <div class="step-title" id="step3-title">Coordinate directly</div>
+        <div class="step-desc" id="step3-desc">Connect and coordinate directly with your neighbour. No middleman, no agency — just two community members working it out.</div>
       </div>
       <div class="step-card">
         <div class="step-num">4</div>
-        <div class="step-title" id="step4-title">Leave feedback after the job</div>
-        <div class="step-desc" id="step4-desc">Leave a rating after every job. Payment is arranged directly between you and the provider.</div>
+        <div class="step-title" id="step4-title">Leave a review</div>
+        <div class="step-desc" id="step4-desc">Rate the experience after every job. Payment is arranged directly between you and your neighbour. Reviews build community trust.</div>
       </div>
     </div>
   </div>
@@ -169,41 +181,48 @@
 <div class="services-section">
   <div class="services-inner">
     <div class="section-label" id="svc-label">Services</div>
-    <div class="section-title" id="svc-title">Outside and beyond.</div>
-    <p class="section-sub" id="svc-sub" style="margin-bottom:40px;">From your lawn to your car — YardRush connects you to year-round local help.</p>
+    <div class="section-title" id="svc-title">Year-round. Local. Community.</div>
+    <p class="section-sub" id="svc-sub" style="margin-bottom:40px;">From lawn care to snow removal — your neighbours are ready to help, season after season.</p>
     <div class="services-grid">
-      <div class="service-card"><div class="service-icon">🌿</div><div class="service-name">Grass Cutting</div></div>
-      <div class="service-card"><div class="service-icon">❄️</div><div class="service-name">Snow Removal</div></div>
-      <div class="service-card"><div class="service-icon">🍂</div><div class="service-name">Leaf Clean Up</div></div>
-      <div class="service-card"><div class="service-icon">🪣</div><div class="service-name">Gutter Cleaning</div></div>
-      <div class="service-card"><div class="service-icon">🧹</div><div class="service-name">Sweeping</div></div>
-      <div class="service-card"><div class="service-icon">🗑️</div><div class="service-name">Bin Cleaning</div></div>
-      <div class="service-card"><div class="service-icon">🔧</div><div class="service-name">Tire Change</div></div>
-      <div class="service-card"><div class="service-icon">🚗</div><div class="service-name">Car Cleaning</div></div>
-      <div class="service-card"><div class="service-icon">🖌️</div><div class="service-name">Painting</div></div>
+      <div class="service-card"><div class="service-icon">🌿</div><div class="service-name" id="sname-1">Grass Cutting</div></div>
+      <div class="service-card"><div class="service-icon">❄️</div><div class="service-name" id="sname-2">Snow Removal</div></div>
+      <div class="service-card"><div class="service-icon">🍂</div><div class="service-name" id="sname-3">Leaf Clean Up</div></div>
+      <div class="service-card"><div class="service-icon">🗑️</div><div class="service-name" id="sname-4">Bin Cleaning</div></div>
+      <div class="service-card"><div class="service-icon">🔧</div><div class="service-name" id="sname-5">Tire Changes</div></div>
+      <div class="service-card"><div class="service-icon">🚗</div><div class="service-name" id="sname-6">Car Cleaning</div></div>
+      <div class="service-card"><div class="service-icon">🪣</div><div class="service-name" id="sname-7">Gutter Cleaning</div></div>
+      <div class="service-card"><div class="service-icon">🪟</div><div class="service-name" id="sname-8">Window Cleaning</div></div>
+      <div class="service-card"><div class="service-icon">🌸</div><div class="service-name" id="sname-9">Spring Cleaning</div></div>
+      <div class="service-card"><div class="service-icon">♻️</div><div class="service-name" id="sname-10">Metal Recycling</div></div>
+      <div class="service-card"><div class="service-icon">🚿</div><div class="service-name" id="sname-11">Power Washing</div></div>
+      <div class="service-card"><div class="service-icon">🧹</div><div class="service-name" id="sname-12">Sweeping</div></div>
+      <div class="service-card"><div class="service-icon">🖌️</div><div class="service-name" id="sname-13">Painting</div></div>
+      <div class="service-card"><div class="service-icon">🪴</div><div class="service-name" id="sname-14">Gardening</div></div>
+      <div class="service-card"><div class="service-icon">💧</div><div class="service-name" id="sname-15">Watering</div></div>
     </div>
   </div>
 </div>
 
-<!-- PROVIDER SECTION -->
-<div class="provider-section" id="provider">
-  <div class="provider-inner">
+<!-- COMMUNITY SECTION -->
+<div class="community-section" id="community">
+  <div class="community-inner">
     <div>
-      <div class="provider-label" id="prov-label">For independent providers</div>
-      <div class="provider-title" id="prov-title">Earn locally<br>in your <span>neighbourhood.</span></div>
-      <p class="provider-desc" id="prov-desc">YardRush is a platform where local individuals can offer services to their community — all summer long and all winter too. Provide your own equipment, set your own schedule, and start.</p>
+      <div class="community-label" id="comm-label">Our community</div>
+      <div class="community-title" id="comm-title">Built by a neighbour,<br>for the <span>neighbourhood.</span></div>
+      <p class="community-desc" id="comm-desc">YardRush was designed by a single person with one simple idea — to unite the community of Saint-Bruno-de-Montarville. There are no investors, no large corporations, and no outside backing behind this project. Just an idea, hard work, and a belief that neighbours can help neighbours.</p>
       <div class="perks">
-        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text" id="perk1">Set your own availability — work when it suits you</div></div>
-        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text" id="perk2">Providers determine their own pricing (YardRush may introduce fees in the future as the platform evolves)</div></div>
-        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text" id="perk3">Build your reputation with ratings and reviews</div></div>
-        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text" id="perk4">Arrange payments directly with customers</div></div>
-        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text" id="perk5">Work year-round — lawn season to snow season and everything in between</div></div>
+        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text" id="perk1">Anyone can post a job — no subscription required</div></div>
+        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text" id="perk2">Anyone can pick up a job — help when you can</div></div>
+        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text" id="perk3">Payments arranged directly between community members</div></div>
+        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text" id="perk4">Build your reputation through ratings and reviews</div></div>
+        <div class="perk"><div class="perk-dot">✓</div><div class="perk-text" id="perk5">Currently in Beta — growing with the community</div></div>
       </div>
     </div>
-    <div class="provider-stats">
-      <div class="stat-box"><div class="stat-val">9+</div><div class="stat-lbl" id="stat1">Services to offer</div></div>
-      <div class="stat-box"><div class="stat-val">⭐</div><div class="stat-lbl" id="stat2">Grow your reputation through reviews</div></div>
-      <div class="stat-box"><div class="stat-val">📍</div><div class="stat-lbl" id="stat3">Keep it local</div></div>
+    <div class="community-stats">
+      <div class="stat-box"><div class="stat-val">15+</div><div class="stat-lbl" id="stat1">Services available</div></div>
+      <div class="stat-box"><div class="stat-val">🤝</div><div class="stat-lbl" id="stat2">Post or pick up a job</div></div>
+      <div class="stat-box"><div class="stat-val">📍</div><div class="stat-lbl" id="stat3">Saint-Bruno only</div></div>
+      <div class="stat-box"><div class="stat-val">🌱</div><div class="stat-lbl" id="stat4">Community-led, always</div></div>
     </div>
   </div>
 </div>
@@ -213,11 +232,11 @@
   <div class="waitlist-inner">
     <div class="section-label" id="wl-label">Early access</div>
     <div class="section-title" id="wl-title">Be first in line.</div>
-    <p class="section-sub" id="wl-sub">YardRush is launching soon in Saint-Bruno-de-Montarville. Join the waitlist as a customer or an independent provider and stay tuned for the moment we go live.</p>
+    <p class="section-sub" id="wl-sub">YardRush is launching soon in Saint-Bruno-de-Montarville. Join the waitlist — whether you want to post jobs or pick them up.</p>
 
     <div class="tabs">
-      <button class="tab active" id="tab-customer" onclick="switchTab('customer')">🏠 I need services</button>
-      <button class="tab" id="tab-provider" onclick="switchTab('provider')">👷 I want to work</button>
+      <button class="tab active" id="tab-customer" onclick="switchTab('customer')">🏠 I need help</button>
+      <button class="tab" id="tab-provider" onclick="switchTab('provider')">🤝 I want to help</button>
     </div>
 
     <!-- CUSTOMER FORM -->
@@ -233,15 +252,15 @@
           <input type="email" name="email" id="c-email" placeholder="Email address" required>
           <input type="text" name="neighbourhood" id="c-area" placeholder="Your neighbourhood or street (optional)">
         </div>
-        <button type="submit" class="btn-submit" id="btn-customer-submit">Join Customer Waitlist →</button>
-        <p class="form-note" id="note-customer">No spam. We'll only email you when YardRush launches in your area.</p>
+        <button type="submit" class="btn-submit" id="btn-customer-submit">Join the Waitlist →</button>
+        <p class="form-note" id="note-customer">No spam. We'll only reach out when YardRush launches.</p>
       </form>
     </div>
 
-    <!-- PROVIDER FORM -->
+    <!-- HELPER FORM -->
     <div id="form-provider" style="display:none;">
       <form action="https://formspree.io/f/mrejyvav" method="POST" onsubmit="handleSubmit(event, 'provider')">
-        <input type="hidden" name="form-type" value="Provider Waitlist">
+        <input type="hidden" name="form-type" value="Helper Waitlist">
         <input type="hidden" name="language" id="w-lang" value="English">
         <div class="form-group">
           <div class="form-row">
@@ -249,11 +268,11 @@
             <input type="text" name="last-name" id="w-last" placeholder="Last name">
           </div>
           <input type="email" name="email" id="w-email" placeholder="Email address" required>
-          <input type="text" name="age" id="w-age" placeholder="Your age">
-          <input type="text" name="services" id="w-services" placeholder="Services you can offer (e.g. lawn mowing, snow removal)">
+          <input type="text" name="age" id="w-age" placeholder="Your age (must be 16+)">
+          <input type="text" name="services" id="w-services" placeholder="Jobs you'd like to pick up (e.g. lawn mowing, snow removal)">
         </div>
-        <button type="submit" class="btn-submit" id="btn-provider-submit">Join Provider Waitlist →</button>
-        <p class="form-note" id="note-provider">Stay tuned as we roll out so you can get started.</p>
+        <button type="submit" class="btn-submit" id="btn-provider-submit">Join the Waitlist →</button>
+        <p class="form-note" id="note-provider">We'll reach out with everything you need to get started.</p>
       </form>
     </div>
 
@@ -269,12 +288,12 @@
 <footer>
   <div class="footer-logo">Yard<span>Rush</span></div>
   <div class="footer-tagline" id="footer-tagline">To the outside and beyond!</div>
-  <div style="font-size:11px; color:rgba(255,255,255,0.45); max-width:700px; margin:0 auto 16px; line-height:1.6;" id="footer-disclaimer">
-    YardRush is a platform that connects users with independent service providers. YardRush does not directly provide services and is not responsible for the quality of services performed by independent providers.
+  <div class="footer-disclaimer" id="footer-disclaimer">
+    YardRush is currently in Beta. Features and services may evolve as we grow. YardRush is a community-led platform that connects neighbours looking for help with those willing to offer it. Anyone in the community can post or pick up a job. YardRush does not directly provide services, does not verify or screen community members, and does not certify any work performed. YardRush is not responsible for the quality, adequacy, or completion of any job arranged through the platform. YardRush is not liable for any injury, accident, damage to persons or property, or loss of any kind that may occur during or as a result of any job arranged through the platform. All community members participate at their own risk. Use good judgment and stay safe.
   </div>
   <div class="footer-links">
     <a href="#waitlist" id="footer-link1">Join Waitlist</a>
-    <a href="#provider" id="footer-link2">Work With Us</a>
+    <a href="#community" id="footer-link2">Our Community</a>
     <a href="mailto:info@yardrush.ca">info@yardrush.ca</a>
   </div>
   <div class="footer-copy">© 2026 YardRush · yardrush.ca · Saint-Bruno-de-Montarville, QC</div>
@@ -283,119 +302,133 @@
 <script>
 const t = {
   en: {
+    'beta-banner': '🌱 YardRush is currently in Beta — features and services evolve as we grow.',
     'nav-cta-text': 'Join the Waitlist',
-    'hero-badge': '🌿 Local help, right in Saint-Bruno-de-Montarville',
-    'hero-h1-line1': 'Your yard.',
+    'hero-badge': '🌿 Community Job Board · Saint-Bruno-de-Montarville',
+    'hero-h1-line1': 'Your neighbourhood.',
     'hero-h1-line2': 'Connected.',
     'hero-tagline': 'To the outside and beyond!',
-    'hero-btn1': 'Browse Services',
-    'hero-btn2': 'Earn This Season',
+    'hero-btn1': 'Post a Job',
+    'hero-btn2': 'Pick Up a Job',
     'how-label': 'How it works',
-    'how-title': 'Done in minutes,<br>not days.',
-    'how-sub': 'No calls, no waiting. Choose a service, get connected with local independent providers, and coordinate to track progress.',
-    'step1-title': 'Choose your service',
-    'step1-desc': 'Pick from our full list of services. Configure the details — yard size, vehicle type, bin type — and submit.',
-    'step2-title': 'Connect with available local independent providers',
-    'step2-desc': 'You can connect with available local independent providers nearby. See their profile, rating, and estimated arrival time.',
-    'step3-title': 'Coordinate directly with your provider',
-    'step3-desc': 'Coordinate directly with your provider as the work progresses. Your independent provider may share updates directly with you.',
-    'step4-title': 'Leave feedback after the job',
-    'step4-desc': 'Leave a rating after every job. Payment is arranged directly between you and the provider.',
+    'how-title': 'Post. Pick up. Done.',
+    'how-sub': 'No agencies, no middlemen. Post what you need or browse jobs in your neighbourhood and help a neighbour out. Payments are arranged directly between community members.',
+    'step1-title': 'Post a job',
+    'step1-desc': 'Describe what you need, choose a service type, and post it to the community board for your neighbours to see.',
+    'step2-title': 'A neighbour picks it up',
+    'step2-desc': "Community members browse open jobs and claim the ones they can help with. You'll be notified when someone picks up your job.",
+    'step3-title': 'Coordinate directly',
+    'step3-desc': 'Connect and coordinate directly with your neighbour. No middleman, no agency — just two community members working it out.',
+    'step4-title': 'Leave a review',
+    'step4-desc': 'Rate the experience after every job. Payment is arranged directly between you and your neighbour. Reviews build community trust.',
     'svc-label': 'Services',
-    'svc-title': 'Outside and beyond.',
-    'svc-sub': 'From your lawn to your car — YardRush connects you to year-round local help.',
-    'prov-label': 'For independent providers',
-    'prov-title': 'Earn locally<br>in your <span style="color:#1db87a">neighbourhood.</span>',
-    'prov-desc': 'YardRush is a platform where local individuals can offer services to their community — all summer long and all winter too. Provide your own equipment, set your own schedule, and start.',
-    'perk1': 'Set your own availability — work when it suits you',
-    'perk2': 'Providers determine their own pricing (YardRush may introduce fees in the future as the platform evolves)',
-    'perk3': 'Build your reputation with ratings and reviews',
-    'perk4': 'Arrange payments directly with customers',
-    'perk5': 'Work year-round — lawn season to snow season and everything in between',
-    'stat1': 'Services to offer',
-    'stat2': 'Grow your reputation through reviews',
-    'stat3': 'Keep it local',
+    'svc-title': 'Year-round. Local. Community.',
+    'svc-sub': 'From lawn care to snow removal — your neighbours are ready to help, season after season.',
+    'sname-1': 'Grass Cutting', 'sname-2': 'Snow Removal', 'sname-3': 'Leaf Clean Up',
+    'sname-4': 'Bin Cleaning', 'sname-5': 'Tire Changes', 'sname-6': 'Car Cleaning',
+    'sname-7': 'Gutter Cleaning', 'sname-8': 'Window Cleaning', 'sname-9': 'Spring Cleaning',
+    'sname-10': 'Metal Recycling', 'sname-11': 'Power Washing', 'sname-12': 'Sweeping',
+    'sname-13': 'Painting', 'sname-14': 'Gardening', 'sname-15': 'Watering',
+    'comm-label': 'Our community',
+    'comm-title': 'Built by a neighbour,<br>for the <span style="color:#1db87a">neighbourhood.</span>',
+    'comm-desc': 'YardRush was designed by a single person with one simple idea — to unite the community of Saint-Bruno-de-Montarville. There are no investors, no large corporations, and no outside backing behind this project. Just an idea, hard work, and a belief that neighbours can help neighbours.',
+    'perk1': 'Anyone can post a job — no subscription required',
+    'perk2': 'Anyone can pick up a job — help when you can',
+    'perk3': 'Payments arranged directly between community members',
+    'perk4': 'Build your reputation through ratings and reviews',
+    'perk5': 'Currently in Beta — growing with the community',
+    'stat1': 'Services available',
+    'stat2': 'Post or pick up a job',
+    'stat3': 'Saint-Bruno only',
+    'stat4': 'Community-led, always',
     'wl-label': 'Early access',
     'wl-title': 'Be first in line.',
-    'wl-sub': 'YardRush is launching soon in Saint-Bruno-de-Montarville. Join the waitlist as a customer or an independent provider and stay tuned for the moment we go live.',
-    'tab-customer': '🏠 I need services',
-    'tab-provider': '👷 I want to work',
-    'btn-customer-submit': 'Join Customer Waitlist →',
-    'btn-provider-submit': 'Join Provider Waitlist →',
-    'note-customer': "No spam. We'll only email you when YardRush launches in your area.",
-    'note-provider': 'Stay tuned as we roll out so you can get started.',
+    'wl-sub': 'YardRush is launching soon in Saint-Bruno-de-Montarville. Join the waitlist — whether you want to post jobs or pick them up.',
+    'tab-customer': '🏠 I need help',
+    'tab-provider': '🤝 I want to help',
+    'btn-customer-submit': 'Join the Waitlist →',
+    'btn-provider-submit': 'Join the Waitlist →',
+    'note-customer': "No spam. We'll only reach out when YardRush launches.",
+    'note-provider': "We'll reach out with everything you need to get started.",
     'success-title': "You're on the list!",
     'success-sub': "We'll be in touch as soon as YardRush launches in Saint-Bruno-de-Montarville.",
     'footer-tagline': 'To the outside and beyond!',
-    'footer-disclaimer': 'YardRush is a platform that connects users with independent service providers. YardRush does not directly provide services and is not responsible for the quality of services performed by independent providers.',
+    'footer-disclaimer': "YardRush is currently in Beta. Features and services may evolve as we grow. YardRush is a community-led platform that connects neighbours looking for help with those willing to offer it. Anyone in the community can post or pick up a job. YardRush does not directly provide services, does not verify or screen community members, and does not certify any work performed. YardRush is not responsible for the quality, adequacy, or completion of any job arranged through the platform. YardRush is not liable for any injury, accident, damage to persons or property, or loss of any kind that may occur during or as a result of any job arranged through the platform. All community members participate at their own risk. Use good judgment and stay safe.",
     'footer-link1': 'Join Waitlist',
-    'footer-link2': 'Work With Us',
+    'footer-link2': 'Our Community',
     'c-first': 'First name', 'c-last': 'Last name', 'c-email': 'Email address',
     'c-area': 'Your neighbourhood or street (optional)',
     'w-first': 'First name', 'w-last': 'Last name', 'w-email': 'Email address',
-    'w-age': 'Your age', 'w-services': 'Services you can offer (e.g. lawn mowing, snow removal)',
+    'w-age': 'Your age (must be 16+)',
+    'w-services': 'Jobs you\'d like to pick up (e.g. lawn mowing, snow removal)',
     'lang-value': 'English'
   },
   fr: {
+    'beta-banner': '🌱 YardRush est actuellement en version Bêta — les fonctionnalités et services évoluent au fil de notre croissance.',
     'nav-cta-text': 'Rejoindre la liste',
-    'hero-badge': '🌿 Aide locale à Saint-Bruno-de-Montarville',
-    'hero-h1-line1': 'Ton extérieur.',
+    'hero-badge': '🌿 Tableau d\'emplois communautaire · Saint-Bruno-de-Montarville',
+    'hero-h1-line1': 'Ton quartier.',
     'hero-h1-line2': 'Connecté.',
     'hero-tagline': "À l'extérieur et au-delà!",
-    'hero-btn1': 'Voir les services',
-    'hero-btn2': 'Gagne cette saison',
+    'hero-btn1': 'Publier un emploi',
+    'hero-btn2': 'Accepter un emploi',
     'how-label': 'Comment ça marche',
-    'how-title': 'Réglé en minutes,<br>pas en jours.',
-    'how-sub': "Pas d'appels, pas d'attente. Choisis un service, connecte-toi avec des fournisseurs locaux indépendants et informe-toi sur l'avancement.",
-    'step1-title': 'Choisis ton service',
-    'step1-desc': "Sélectionne parmi notre liste complète. Configure les détails — superficie, type de véhicule, type de bac — et soumets ta demande.",
-    'step2-title': 'Connecte-toi avec un fournisseur local',
-    'step2-desc': "Consulte les profils des fournisseurs indépendants disponibles près de chez toi. Vois leurs évaluations et disponibilités.",
-    'step3-title': 'Coordonne directement avec ton fournisseur',
-    'step3-desc': "Reste en contact avec ton fournisseur au fil des travaux. Il peut partager des mises à jour directement avec toi.",
-    'step4-title': 'Laisse un avis après le travail',
-    'step4-desc': "Évalue chaque prestation. Le paiement est convenu directement entre toi et le fournisseur.",
+    'how-title': 'Publie. Accepte. C\'est fait.',
+    'how-sub': "Pas d'agences, pas d'intermédiaires. Publie ce dont tu as besoin ou parcours les emplois dans ton quartier et aide un voisin. Les paiements sont convenus directement entre membres de la communauté.",
+    'step1-title': 'Publie un emploi',
+    'step1-desc': "Décris ce dont tu as besoin, choisis un type de service et publie-le sur le tableau communautaire pour que tes voisins puissent le voir.",
+    'step2-title': 'Un voisin l\'accepte',
+    'step2-desc': "Les membres de la communauté parcourent les emplois disponibles et acceptent ceux qu'ils peuvent accomplir. Tu seras averti dès qu'un voisin prend en charge ton emploi.",
+    'step3-title': 'Coordonne directement',
+    'step3-desc': "Connecte-toi et coordonne directement avec ton voisin. Pas d'intermédiaire, pas d'agence — juste deux membres de la communauté qui s'arrangent.",
+    'step4-title': 'Laisse un avis',
+    'step4-desc': "Évalue l'expérience après chaque emploi. Le paiement est convenu directement entre toi et ton voisin. Les avis bâtissent la confiance communautaire.",
     'svc-label': 'Services',
-    'svc-title': "À l'extérieur et au-delà.",
-    'svc-sub': "De ton gazon à ta voiture — YardRush te connecte à de l'aide locale, été comme hiver.",
-    'prov-label': 'Pour les fournisseurs indépendants',
-    'prov-title': 'Gagne localement<br>dans ton <span style="color:#1db87a">quartier.</span>',
-    'prov-desc': "YardRush est une plateforme où des individus locaux peuvent offrir leurs services à leur communauté — été comme hiver. Apporte ton propre équipement, fixe ton horaire et commence.",
-    'perk1': 'Fixe tes propres disponibilités — travaille quand tu veux',
-    'perk2': 'Les fournisseurs déterminent leurs propres tarifs (YardRush pourrait introduire des frais dans le futur)',
-    'perk3': 'Bâtis ta réputation grâce aux évaluations et aux avis',
-    'perk4': 'Arrange les paiements directement avec tes clients',
-    'perk5': "Travaille toute l'année — saison de tonte, de déneigement et tout ce qui est entre les deux",
-    'stat1': 'Services à offrir',
-    'stat2': 'Bâtis ta réputation',
-    'stat3': 'Reste local',
+    'svc-title': "Toute l'année. Local. Communautaire.",
+    'svc-sub': "De l'entretien du gazon au déneigement — tes voisins sont prêts à aider, saison après saison.",
+    'sname-1': 'Tonte de gazon', 'sname-2': 'Déneigement', 'sname-3': 'Ramassage de feuilles',
+    'sname-4': 'Nettoyage de bacs', 'sname-5': 'Changement de pneus', 'sname-6': 'Nettoyage de voiture',
+    'sname-7': 'Nettoyage de gouttières', 'sname-8': 'Nettoyage de fenêtres', 'sname-9': 'Ménage printanier',
+    'sname-10': 'Collecte de métaux', 'sname-11': 'Lavage à pression', 'sname-12': 'Balayage',
+    'sname-13': 'Peinture', 'sname-14': 'Jardinage', 'sname-15': 'Arrosage',
+    'comm-label': 'Notre communauté',
+    'comm-title': 'Créé par un voisin,<br>pour le <span style="color:#1db87a">quartier.</span>',
+    'comm-desc': "YardRush a été conçu par une seule personne avec une idée simple — unir la communauté de Saint-Bruno-de-Montarville. Pas d'investisseurs, pas de grandes corporations, pas de soutien extérieur derrière ce projet. Juste une idée, du travail et la conviction que les voisins peuvent s'entraider.",
+    'perk1': "N'importe qui peut publier un emploi — sans abonnement requis",
+    'perk2': "N'importe qui peut accepter un emploi — aide quand tu peux",
+    'perk3': 'Les paiements sont convenus directement entre membres de la communauté',
+    'perk4': 'Bâtis ta réputation grâce aux évaluations et aux avis',
+    'perk5': 'Actuellement en version Bêta — grandissant avec la communauté',
+    'stat1': 'Services disponibles',
+    'stat2': 'Publie ou accepte un emploi',
+    'stat3': 'Saint-Bruno seulement',
+    'stat4': 'Communautaire, toujours',
     'wl-label': 'Accès anticipé',
     'wl-title': 'Sois parmi les premiers.',
-    'wl-sub': "YardRush arrive bientôt à Saint-Bruno-de-Montarville. Inscris-toi sur la liste d'attente en tant que client ou fournisseur indépendant.",
-    'tab-customer': "🏠 J'ai besoin de services",
-    'tab-provider': '👷 Je veux travailler',
-    'btn-customer-submit': 'Rejoindre la liste client →',
-    'btn-provider-submit': 'Rejoindre la liste fournisseur →',
-    'note-customer': "Pas de spam. On t'écrira uniquement au lancement de YardRush dans ta région.",
+    'wl-sub': "YardRush arrive bientôt à Saint-Bruno-de-Montarville. Inscris-toi sur la liste d'attente — que tu veuilles publier des emplois ou en accepter.",
+    'tab-customer': "🏠 J'ai besoin d'aide",
+    'tab-provider': '🤝 Je veux aider',
+    'btn-customer-submit': "Rejoindre la liste d'attente →",
+    'btn-provider-submit': "Rejoindre la liste d'attente →",
+    'note-customer': "Pas de spam. On te contactera uniquement au lancement de YardRush.",
     'note-provider': "On te contactera avec tout ce qu'il faut pour commencer.",
     'success-title': 'Tu es sur la liste!',
     'success-sub': 'On te contactera dès que YardRush sera lancé à Saint-Bruno-de-Montarville.',
     'footer-tagline': "À l'extérieur et au-delà!",
-    'footer-disclaimer': "YardRush est une plateforme qui met en relation les utilisateurs avec des fournisseurs de services indépendants. YardRush ne fournit pas directement les services et n'est pas responsable de la qualité des travaux effectués par les fournisseurs indépendants.",
+    'footer-disclaimer': "YardRush est actuellement en version Bêta. Les fonctionnalités et services peuvent évoluer au fil de notre croissance. YardRush est une plateforme communautaire qui connecte les voisins ayant besoin d'aide avec ceux prêts à en offrir. N'importe quel membre de la communauté peut publier ou accepter un emploi. YardRush ne fournit pas directement les services, ne vérifie pas les membres de la communauté et ne certifie aucun travail effectué. YardRush n'est pas responsable de la qualité, de l'adéquation ou de l'exécution des emplois arrangés via la plateforme. YardRush n'est pas responsable de toute blessure, accident, dommage aux personnes ou aux biens, ou perte de quelque nature que ce soit survenant lors d'un emploi arrangé via la plateforme. Tous les membres participent à leurs propres risques. Faites preuve de bon jugement et restez en sécurité.",
     'footer-link1': "Liste d'attente",
-    'footer-link2': 'Travailler avec nous',
+    'footer-link2': 'Notre communauté',
     'c-first': 'Prénom', 'c-last': 'Nom', 'c-email': 'Adresse courriel',
     'c-area': 'Ton quartier ou ta rue (optionnel)',
     'w-first': 'Prénom', 'w-last': 'Nom', 'w-email': 'Adresse courriel',
-    'w-age': 'Ton âge', 'w-services': 'Services que tu peux offrir (ex. tonte, déneigement)',
+    'w-age': 'Ton âge (16 ans et plus)',
+    'w-services': 'Emplois que tu aimerais accepter (ex. tonte, déneigement)',
     'lang-value': 'Français'
   }
 };
 
-const pillFR = ['🌿 Tonte de gazon','❄️ Déneigement','🍂 Ramassage de feuilles','🗑️ Nettoyage de bacs','🔧 Changement de pneus','🚗 Nettoyage de voiture','🪣 Nettoyage de gouttières','🧹 Balayage','🖌️ Peinture'];
-const pillEN = ['🌿 Grass Cutting','❄️ Snow Removal','🍂 Leaf Clean Up','🗑️ Bin Cleaning','🔧 Tire Changes','🚗 Car Cleaning','🪣 Gutter Cleaning','🧹 Sweeping','🖌️ Painting'];
-const enNames = ['Grass Cutting','Snow Removal','Leaf Clean Up','Gutter Cleaning','Sweeping','Bin Cleaning','Tire Change','Car Cleaning','Painting'];
-const frNames = ['Tonte de gazon','Déneigement','Ramassage de feuilles','Nettoyage de gouttières','Balayage','Nettoyage de bacs','Changement de pneus','Nettoyage de voiture','Peinture'];
+const pillEN = ['🌿 Grass Cutting','❄️ Snow Removal','🍂 Leaf Clean Up','🗑️ Bin Cleaning','🔧 Tire Changes','🚗 Car Cleaning','🪣 Gutter Cleaning','🪟 Window Cleaning','🌸 Spring Cleaning','♻️ Metal Recycling','🚿 Power Washing','🧹 Sweeping','🖌️ Painting','🪴 Gardening','💧 Watering'];
+const pillFR = ['🌿 Tonte de gazon','❄️ Déneigement','🍂 Ramassage de feuilles','🗑️ Nettoyage de bacs','🔧 Changement de pneus','🚗 Nettoyage de voiture','🪣 Nettoyage de gouttières','🪟 Nettoyage de fenêtres','🌸 Ménage printanier','♻️ Collecte de métaux','🚿 Lavage à pression','🧹 Balayage','🖌️ Peinture','🪴 Jardinage','💧 Arrosage'];
 
 let currentLang = 'en';
 let currentFormTab = 'customer';
@@ -406,18 +439,21 @@ function setLang(lang) {
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
   document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
 
-  const ids = ['nav-cta-text','hero-badge','hero-tagline','hero-btn1','hero-btn2',
+  const ids = ['beta-banner','nav-cta-text','hero-badge','hero-tagline','hero-btn1','hero-btn2',
     'hero-h1-line1','hero-h1-line2','how-label','how-title','how-sub',
     'step1-title','step1-desc','step2-title','step2-desc','step3-title','step3-desc',
-    'step4-title','step4-desc','svc-label','svc-title','svc-sub','prov-label',
-    'prov-title','prov-desc','perk1','perk2','perk3','perk4','perk5',
-    'stat1','stat2','stat3','wl-label','wl-title','wl-sub','tab-customer','tab-provider',
+    'step4-title','step4-desc','svc-label','svc-title','svc-sub',
+    'sname-1','sname-2','sname-3','sname-4','sname-5','sname-6','sname-7','sname-8',
+    'sname-9','sname-10','sname-11','sname-12','sname-13','sname-14','sname-15',
+    'comm-label','comm-title','comm-desc','perk1','perk2','perk3','perk4','perk5',
+    'stat1','stat2','stat3','stat4',
+    'wl-label','wl-title','wl-sub','tab-customer','tab-provider',
     'btn-customer-submit','btn-provider-submit','note-customer','note-provider',
     'success-title','success-sub','footer-tagline','footer-disclaimer','footer-link1','footer-link2'];
 
   ids.forEach(id => {
     const el = document.getElementById(id);
-    if (el) el.innerHTML = t[lang][id];
+    if (el && t[lang][id] !== undefined) el.innerHTML = t[lang][id];
   });
 
   ['c-first','c-last','c-email','c-area','w-first','w-last','w-email','w-age','w-services'].forEach(id => {
@@ -425,12 +461,12 @@ function setLang(lang) {
     if (el) el.placeholder = t[lang][id];
   });
 
-  // Update hidden language fields so Formspree shows which language was used
   document.getElementById('c-lang').value = t[lang]['lang-value'];
   document.getElementById('w-lang').value = t[lang]['lang-value'];
 
-  document.querySelectorAll('.service-pill').forEach((p, i) => { p.textContent = lang === 'fr' ? pillFR[i] : pillEN[i]; });
-  document.querySelectorAll('.service-name').forEach((n, i) => { n.textContent = lang === 'fr' ? frNames[i] : enNames[i]; });
+  document.querySelectorAll('.service-pill').forEach((p, i) => {
+    p.textContent = lang === 'fr' ? pillFR[i] : pillEN[i];
+  });
 
   switchTab(currentFormTab);
 }
@@ -449,9 +485,7 @@ async function handleSubmit(e, type) {
   const data = new FormData(form);
   try {
     const res = await fetch('https://formspree.io/f/mrejyvav', {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
+      method: 'POST', body: data, headers: { 'Accept': 'application/json' }
     });
     if (res.ok) {
       document.getElementById('form-customer').style.display = 'none';

@@ -148,6 +148,11 @@
     <span class="service-pill">🖌️ Painting</span>
     <span class="service-pill">🪴 Gardening</span>
     <span class="service-pill">💧 Watering</span>
+    <span class="service-pill">🔨 Odd Jobs</span>
+    <span class="service-pill">🐾 Pet Help</span>
+    <span class="service-pill">✂️ Hedge Trimming</span>
+    <span class="service-pill">🧂 Salting</span>
+    <span class="service-pill">📦 Moving Help</span>
   </div>
 </div>
 
@@ -204,6 +209,11 @@
       <div class="service-card"><div class="service-icon">🖌️</div><div class="service-name" id="sname-13">Painting</div></div>
       <div class="service-card"><div class="service-icon">🪴</div><div class="service-name" id="sname-14">Gardening</div></div>
       <div class="service-card"><div class="service-icon">💧</div><div class="service-name" id="sname-15">Watering</div></div>
+      <div class="service-card"><div class="service-icon">🔨</div><div class="service-name" id="sname-16">Odd Jobs</div></div>
+      <div class="service-card"><div class="service-icon">🐾</div><div class="service-name" id="sname-17">Pet Help</div></div>
+      <div class="service-card"><div class="service-icon">✂️</div><div class="service-name" id="sname-18">Hedge Trimming</div></div>
+      <div class="service-card"><div class="service-icon">🧂</div><div class="service-name" id="sname-19">Salting</div></div>
+      <div class="service-card"><div class="service-icon">📦</div><div class="service-name" id="sname-20">Moving Help</div></div>
     </div>
   </div>
 </div>
@@ -224,7 +234,7 @@
       </div>
     </div>
     <div class="community-stats">
-      <div class="stat-box"><div class="stat-val">15+</div><div class="stat-lbl" id="stat1">Services available</div></div>
+      <div class="stat-box"><div class="stat-val">20+</div><div class="stat-lbl" id="stat1">Services available</div></div>
       <div class="stat-box"><div class="stat-val">🤝</div><div class="stat-lbl" id="stat2">Post or pick up a job</div></div>
       <div class="stat-box"><div class="stat-val">📍</div><div class="stat-lbl" id="stat3">Saint-Bruno only</div></div>
       <div class="stat-box"><div class="stat-val">🌱</div><div class="stat-lbl" id="stat4">Community-led, always</div></div>
@@ -328,6 +338,8 @@ const t = {
     'sname-7': 'Gutter Cleaning', 'sname-8': 'Window Cleaning', 'sname-9': 'Spring Cleaning',
     'sname-10': 'Metal Recycling', 'sname-11': 'Power Washing', 'sname-12': 'Sweeping',
     'sname-13': 'Painting', 'sname-14': 'Gardening', 'sname-15': 'Watering',
+    'sname-16': 'Odd Jobs', 'sname-17': 'Pet Help', 'sname-18': 'Hedge Trimming',
+    'sname-19': 'Salting', 'sname-20': 'Moving Help',
     'comm-label': 'Our community',
     'comm-title': 'Built by a neighbour,<br>for the <span style="color:#1db87a">neighbourhood.</span>',
     'comm-desc': 'YardRush was designed by a single person with one simple idea — to unite the community of Saint-Bruno-de-Montarville. There are no investors, no large corporations, and no outside backing behind this project. Just an idea, hard work, and a belief that neighbours can help neighbours.',
@@ -365,19 +377,19 @@ const t = {
   fr: {
     'beta-banner': '🌱 YardRush est actuellement en version Bêta — les fonctionnalités et services évoluent au fil de notre croissance.',
     'nav-cta-text': 'Rejoindre la liste',
-    'hero-badge': "🌿 Tableau de travaux communautaire · Saint-Bruno-de-Montarville",
+    'hero-badge': "🌿 Tableau des offres communautaire · Saint-Bruno-de-Montarville",
     'hero-h1-line1': 'Ton quartier.',
     'hero-h1-line2': 'Connecté.',
     'hero-tagline': "À l'extérieur et au-delà!",
-    'hero-btn1': 'Publier un travail',
-    'hero-btn2': 'Accepter un travail',
+    'hero-btn1': 'Publier une offre',
+    'hero-btn2': 'Accepter une offre',
     'how-label': 'Comment ça marche',
     'how-title': "Publie. Accepte. C'est fait.",
     'how-sub': "Pas d'agences, pas d'intermédiaires. Publie ce dont tu as besoin ou parcours les travaux dans ton quartier et aide un voisin. Les paiements sont convenus directement entre membres de la communauté.",
-    'step1-title': 'Publie un travail',
+    'step1-title': 'Publie une offre',
     'step1-desc': "Décris ce dont tu as besoin, choisis un type de service et publie-le sur le tableau communautaire pour que tes voisins puissent le voir.",
     'step2-title': "Un voisin l'accepte",
-    'step2-desc': "Les membres de la communauté parcourent les travaux disponibles et acceptent ceux qu'ils peuvent accomplir. Tu seras averti dès qu'un voisin prend en charge ton travail.",
+    'step2-desc': "Les membres de la communauté parcourent les offres disponibles et acceptent ceux qu'ils peuvent accomplir. Tu seras averti dès qu'un voisin prend en charge ton offre de travail.",
     'step3-title': 'Coordonne directement',
     'step3-desc': "Connecte-toi et coordonne directement avec ton voisin. Pas d'intermédiaire, pas d'agence — juste deux membres de la communauté qui s'arrangent.",
     'step4-title': 'Laisse un avis',
@@ -390,10 +402,12 @@ const t = {
     'sname-7': 'Nettoyage de gouttières', 'sname-8': 'Nettoyage de fenêtres', 'sname-9': 'Ménage printanier',
     'sname-10': 'Collecte de métaux', 'sname-11': 'Lavage à pression', 'sname-12': 'Balayage',
     'sname-13': 'Peinture', 'sname-14': 'Jardinage', 'sname-15': 'Arrosage',
+    'sname-16': 'Menus travaux', 'sname-17': 'Aide aux animaux', 'sname-18': 'Taille de haies',
+    'sname-19': 'Salage', 'sname-20': 'Aide au déménagement',
     'comm-label': 'Notre communauté',
     'comm-title': 'Créé par un voisin,<br>pour le <span style="color:#1db87a">quartier.</span>',
     'comm-desc': "YardRush a été conçu par une seule personne avec une idée simple — unir la communauté de Saint-Bruno-de-Montarville. Pas d'investisseurs, pas de grandes corporations, pas de soutien extérieur derrière ce projet. Juste une idée, du travail et la conviction que les voisins peuvent s'entraider.",
-    'perk1': "N'importe qui peut publier un travail — sans abonnement requis",
+    'perk1': "N'importe qui peut publier une offre — sans abonnement requis",
     'perk2': "N'importe qui peut accepter un travail — aide quand tu peux",
     'perk3': 'Les paiements sont convenus directement entre membres de la communauté',
     'perk4': 'Bâtis ta réputation grâce aux évaluations et aux avis',
@@ -404,7 +418,7 @@ const t = {
     'stat4': 'Communautaire, toujours',
     'wl-label': 'Accès anticipé',
     'wl-title': 'Sois parmi les premiers.',
-    'wl-sub': "YardRush arrive bientôt à Saint-Bruno-de-Montarville. Inscris-toi sur la liste d'attente — que tu veuilles publier des travaux ou en accepter.",
+    'wl-sub': "YardRush arrive bientôt à Saint-Bruno-de-Montarville. Inscris-toi sur la liste d'attente — que tu veuilles publier des offres ou en accepter.",
     'tab-customer': "🏠 J'ai besoin d'aide",
     'tab-provider': '🤝 Je veux aider',
     'btn-customer-submit': "Rejoindre la liste d'attente →",
@@ -414,7 +428,7 @@ const t = {
     'success-title': 'Tu es sur la liste!',
     'success-sub': 'On te contactera dès que YardRush sera lancé à Saint-Bruno-de-Montarville.',
     'footer-tagline': "À l'extérieur et au-delà!",
-    'footer-disclaimer': "YardRush est actuellement en version Bêta. Les fonctionnalités et services peuvent évoluer au fil de notre croissance. YardRush est une plateforme communautaire qui connecte les voisins ayant besoin d'aide avec ceux prêts à en offrir. N'importe quel membre de la communauté peut publier ou accepter un travail. YardRush ne fournit pas directement les services, ne vérifie pas les membres de la communauté et ne certifie aucun travail effectué. YardRush n'est pas responsable de la qualité, de l'adéquation ou de l'exécution des travaux arrangés via la plateforme. YardRush n'est pas responsable de toute blessure, accident, dommage aux personnes ou aux biens, ou perte de quelque nature que ce soit survenant lors d'un travail arrangé via la plateforme. Tous les membres participent à leurs propres risques. Faites preuve de bon jugement et restez en sécurité.",
+    'footer-disclaimer': "YardRush est actuellement en version Bêta. Les fonctionnalités et services peuvent évoluer au fil de notre croissance. YardRush est une plateforme communautaire qui connecte les voisins ayant besoin d'aide avec ceux prêts à en offrir. N'importe quel membre de la communauté peut publier ou accepter une offre. YardRush ne fournit pas directement les services, ne vérifie pas les membres de la communauté et ne certifie aucun travail effectué. YardRush n'est pas responsable de la qualité, de l'adéquation ou de l'exécution des travaux arrangés via la plateforme. YardRush n'est pas responsable de toute blessure, accident, dommage aux personnes ou aux biens, ou perte de quelque nature que ce soit survenant lors d'un travail arrangé via la plateforme. Tous les membres participent à leurs propres risques. Faites preuve de bon jugement et restez en sécurité.",
     'footer-link1': "Liste d'attente",
     'footer-link2': 'Notre communauté',
     'c-first': 'Prénom', 'c-last': 'Nom', 'c-email': 'Adresse courriel',
@@ -426,8 +440,8 @@ const t = {
   }
 };
 
-const pillEN = ['🌿 Grass Cutting','❄️ Snow Removal','🍂 Leaf Clean Up','🗑️ Bin Cleaning','🔧 Tire Changes','🚗 Car Cleaning','🪣 Gutter Cleaning','🪟 Window Cleaning','🌸 Spring Cleaning','♻️ Metal Recycling','🚿 Power Washing','🧹 Sweeping','🖌️ Painting','🪴 Gardening','💧 Watering'];
-const pillFR = ['🌿 Tonte de gazon','❄️ Déneigement','🍂 Ramassage de feuilles','🗑️ Nettoyage de bacs','🔧 Changement de pneus','🚗 Nettoyage de voiture','🪣 Nettoyage de gouttières','🪟 Nettoyage de fenêtres','🌸 Ménage printanier','♻️ Collecte de métaux','🚿 Lavage à pression','🧹 Balayage','🖌️ Peinture','🪴 Jardinage','💧 Arrosage'];
+const pillEN = ['🌿 Grass Cutting','❄️ Snow Removal','🍂 Leaf Clean Up','🗑️ Bin Cleaning','🔧 Tire Changes','🚗 Car Cleaning','🪣 Gutter Cleaning','🪟 Window Cleaning','🌸 Spring Cleaning','♻️ Metal Recycling','🚿 Power Washing','🧹 Sweeping','🖌️ Painting','🪴 Gardening','💧 Watering','🔨 Odd Jobs','🐾 Pet Help','✂️ Hedge Trimming','🧂 Salting','📦 Moving Help'];
+const pillFR = ['🌿 Tonte de gazon','❄️ Déneigement','🍂 Ramassage de feuilles','🗑️ Nettoyage de bacs','🔧 Changement de pneus','🚗 Nettoyage de voiture','🪣 Nettoyage de gouttières','🪟 Nettoyage de fenêtres','🌸 Ménage printanier','♻️ Collecte de métaux','🚿 Lavage à pression','🧹 Balayage','🖌️ Peinture','🪴 Jardinage','💧 Arrosage','🔨 Menus travaux','🐾 Aide aux animaux','✂️ Taille de haies','🧂 Salage','📦 Aide au déménagement'];
 
 let currentLang = 'en';
 let currentFormTab = 'customer';
@@ -443,6 +457,7 @@ function setLang(lang) {
     'step4-title','step4-desc','svc-label','svc-title','svc-sub',
     'sname-1','sname-2','sname-3','sname-4','sname-5','sname-6','sname-7','sname-8',
     'sname-9','sname-10','sname-11','sname-12','sname-13','sname-14','sname-15',
+    'sname-16','sname-17','sname-18','sname-19','sname-20',
     'comm-label','comm-title','comm-desc','perk1','perk2','perk3','perk4','perk5',
     'stat1','stat2','stat3','stat4',
     'wl-label','wl-title','wl-sub','tab-customer','tab-provider',

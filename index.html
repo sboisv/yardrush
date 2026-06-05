@@ -107,7 +107,7 @@
 <body>
 
 <!-- BETA BANNER -->
-<div class="beta-banner" id="beta-banner">🌱 YardRush is currently in Beta — features and services evolve as we grow.</div>
+<div class="beta-banner" id="beta-banner">🌱 YardRush is currently in Beta — launching this summer in Saint-Bruno-de-Montarville.</div>
 
 <!-- NAV -->
 <nav>
@@ -293,6 +293,17 @@
   </div>
 </div>
 
+<!-- SUPPORT SECTION -->
+<div style="background: #f8fffe; border-top: 1px solid #c8f0de; border-bottom: 1px solid #c8f0de; padding: 60px 24px; text-align: center;">
+  <div style="max-width: 620px; margin: 0 auto;">
+    <div style="font-size: 36px; margin-bottom: 16px;">☕</div>
+    <div style="font-size: 11px; font-weight: 700; color: #1db87a; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;" id="support-label">Soutenir le projet</div>
+    <div style="font-size: clamp(22px, 3vw, 30px); font-weight: 800; color: #0a1f2e; letter-spacing: -0.5px; margin-bottom: 14px; line-height: 1.2;" id="support-title">Aidez ce projet à voir le jour</div>
+    <p style="font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 28px;" id="support-desc">YardRush est entièrement financé et maintenu par une seule personne — sans investisseurs, sans entreprise, sans soutien extérieur. Si ce projet vous tient à cœur, une contribution volontaire aide à couvrir les coûts d'hébergement et à faire vivre la plateforme pour la communauté.</p>
+    <a href="https://ko-fi.com/yardrush#linkModal" target="_blank" style="display: inline-block; background: #1db87a; color: #fff; border-radius: 12px; padding: 14px 32px; font-size: 15px; font-weight: 700; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#17a368'" onmouseout="this.style.background='#1db87a'" id="support-btn">☕ Contributions volontaires</a>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">
@@ -311,7 +322,7 @@
 <script>
 const t = {
   en: {
-    'beta-banner': '🌱 YardRush is currently in Beta — features and services evolve as we grow.',
+    'beta-banner': '🌱 YardRush is currently in Beta — launching this summer in Saint-Bruno-de-Montarville.',
     'nav-cta-text': 'Join the Waitlist',
     'hero-badge': '🌿 Community Job Board · Saint-Bruno-de-Montarville',
     'hero-h1-line1': 'Your neighbourhood.',
@@ -365,8 +376,13 @@ const t = {
     'success-sub': "We'll be in touch as soon as YardRush launches in Saint-Bruno-de-Montarville.",
     'footer-tagline': 'To the outside and beyond!',
     'footer-disclaimer': "YardRush is currently in Beta. Features and services may evolve as we grow. YardRush is a community-led platform that connects neighbours looking for help with those willing to offer it. Anyone in the community can post or pick up a job. YardRush does not directly provide services, does not verify or screen community members, and does not certify any work performed. YardRush is not responsible for the quality, adequacy, or completion of any job arranged through the platform. YardRush is not liable for any injury, accident, damage to persons or property, or loss of any kind that may occur during or as a result of any job arranged through the platform. All community members participate at their own risk. Use good judgment and stay safe.",
+    'support-label': 'Support the project',
+    'support-title': 'Help this project come to life',
+    'support-desc': 'YardRush is entirely funded and maintained by one person — no investors, no corporation, no outside support. If this project means something to you, a voluntary contribution helps cover hosting costs and keeps the platform alive for the community.',
+    'support-btn': '☕ Voluntary contributions',
     'footer-link1': 'Join Waitlist',
     'footer-link2': 'Our Community',
+    'footer-kofi': '☕ Contributions volontaires / Voluntary contributions',
     'c-first': 'First name', 'c-last': 'Last name', 'c-email': 'Email address',
     'c-area': 'Your neighbourhood or street (optional)',
     'w-first': 'First name', 'w-last': 'Last name', 'w-email': 'Email address',
@@ -375,7 +391,7 @@ const t = {
     'lang-value': 'English'
   },
   fr: {
-    'beta-banner': '🌱 YardRush est actuellement en version Bêta — les fonctionnalités et services évoluent au fil de notre croissance.',
+    'beta-banner': '🌱 YardRush est actuellement en version Bêta — lancement cet été à Saint-Bruno-de-Montarville.',
     'nav-cta-text': 'Rejoindre la liste',
     'hero-badge': "🌿 Tableau des offres communautaire · Saint-Bruno-de-Montarville",
     'hero-h1-line1': 'Ton quartier.',
@@ -385,7 +401,7 @@ const t = {
     'hero-btn2': 'Accepter une offre',
     'how-label': 'Comment ça marche',
     'how-title': "Publie. Accepte. C'est fait.",
-    'how-sub': "Pas d'agences, pas d'intermédiaires. Publie ce dont tu as besoin ou parcours les travaux dans ton quartier et aide un voisin. Les paiements sont convenus directement entre membres de la communauté.",
+    'how-sub': "Pas d'agences, pas d'intermédiaires. Publie ce dont tu as besoin ou parcours les offres dans ton quartier et aide un voisin. Les paiements sont convenus directement entre membres de la communauté.",
     'step1-title': 'Publie une offre',
     'step1-desc': "Décris ce dont tu as besoin, choisis un type de service et publie-le sur le tableau communautaire pour que tes voisins puissent le voir.",
     'step2-title': "Un voisin l'accepte",
@@ -428,14 +444,19 @@ const t = {
     'success-title': 'Tu es sur la liste!',
     'success-sub': 'On te contactera dès que YardRush sera lancé à Saint-Bruno-de-Montarville.',
     'footer-tagline': "À l'extérieur et au-delà!",
-    'footer-disclaimer': "YardRush est actuellement en version Bêta. Les fonctionnalités et services peuvent évoluer au fil de notre croissance. YardRush est une plateforme communautaire qui connecte les voisins ayant besoin d'aide avec ceux prêts à en offrir. N'importe quel membre de la communauté peut publier ou accepter une offre. YardRush ne fournit pas directement les services, ne vérifie pas les membres de la communauté et ne certifie aucun travail effectué. YardRush n'est pas responsable de la qualité, de l'adéquation ou de l'exécution des travaux arrangés via la plateforme. YardRush n'est pas responsable de toute blessure, accident, dommage aux personnes ou aux biens, ou perte de quelque nature que ce soit survenant lors d'un travail arrangé via la plateforme. Tous les membres participent à leurs propres risques. Faites preuve de bon jugement et restez en sécurité.",
+    'footer-disclaimer': "YardRush est actuellement en version Bêta. Les fonctionnalités et services peuvent évoluer au fil de notre croissance. YardRush est une plateforme communautaire qui connecte les voisins ayant besoin d'aide avec ceux prêts à en offrir. N'importe quel membre de la communauté peut publier ou accepter une offre. YardRush ne fournit pas directement les services, ne vérifie pas les membres de la communauté et ne certifie aucun travail effectué. YardRush n'est pas responsable de la qualité, de l'adéquation ou de l'exécution des travaux arrangés via via la plateforme. YardRush n'est pas responsable de toute blessure, accident, dommage aux personnes ou aux biens, ou perte de quelque nature que ce soit survenant lors d'un travail arrangé via la plateforme. Tous les membres participent à leurs propres risques. Faites preuve de bon jugement et restez en sécurité.",
+    'support-label': 'Soutenir le projet',
+    'support-title': 'Aidez ce projet à voir le jour',
+    'support-desc': "YardRush est entièrement financé et maintenu par une seule personne — sans investisseurs, sans entreprise, sans soutien extérieur. Si ce projet vous tient à cœur, une contribution volontaire aide à couvrir les coûts d'hébergement et à faire vivre la plateforme pour la communauté.",
+    'support-btn': '☕ Contributions volontaires',
     'footer-link1': "Liste d'attente",
     'footer-link2': 'Notre communauté',
+    'footer-kofi': '☕ Contributions volontaires / Voluntary contributions',
     'c-first': 'Prénom', 'c-last': 'Nom', 'c-email': 'Adresse courriel',
     'c-area': 'Ton quartier ou ta rue (optionnel)',
     'w-first': 'Prénom', 'w-last': 'Nom', 'w-email': 'Adresse courriel',
     'w-age': 'Ton âge (16 ans et plus)',
-    'w-services': 'Travaux que tu aimerais accepter (ex. tonte, déneigement)',
+    'w-services': 'Emplois que tu aimerais accepter (ex. tonte, déneigement)',
     'lang-value': 'Français'
   }
 };
@@ -462,7 +483,8 @@ function setLang(lang) {
     'stat1','stat2','stat3','stat4',
     'wl-label','wl-title','wl-sub','tab-customer','tab-provider',
     'btn-customer-submit','btn-provider-submit','note-customer','note-provider',
-    'success-title','success-sub','footer-tagline','footer-disclaimer','footer-link1','footer-link2'];
+    'success-title','success-sub','footer-tagline','footer-disclaimer','footer-link1','footer-link2',
+    'support-label','support-title','support-desc','support-btn'];
   ids.forEach(id => { const el = document.getElementById(id); if (el && t[lang][id] !== undefined) el.innerHTML = t[lang][id]; });
   ['c-first','c-last','c-email','c-area','w-first','w-last','w-email','w-age','w-services'].forEach(id => { const el = document.getElementById(id); if (el) el.placeholder = t[lang][id]; });
   document.getElementById('c-lang').value = t[lang]['lang-value'];

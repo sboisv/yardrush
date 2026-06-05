@@ -116,8 +116,8 @@
   </div>
   <div class="nav-right">
     <div class="lang-toggle">
-      <button class="lang-btn active" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn active" onclick="setLang('fr')">FR</button>
     </div>
     <a class="nav-cta" href="#waitlist" id="nav-cta-text">Join the Waitlist</a>
   </div>
@@ -464,7 +464,8 @@ const t = {
 const pillEN = ['🌿 Grass Cutting','❄️ Snow Removal','🍂 Leaf Clean Up','🗑️ Bin Cleaning','🔧 Tire Changes','🚗 Car Cleaning','🪣 Gutter Cleaning','🪟 Window Cleaning','🌸 Spring Cleaning','♻️ Metal Recycling','🚿 Power Washing','🧹 Sweeping','🖌️ Painting','🪴 Gardening','💧 Watering','🔨 Odd Jobs','🐾 Pet Help','✂️ Hedge Trimming','🧂 Salting','📦 Moving Help'];
 const pillFR = ['🌿 Tonte de gazon','❄️ Déneigement','🍂 Ramassage de feuilles','🗑️ Nettoyage de bacs','🔧 Changement de pneus','🚗 Nettoyage de voiture','🪣 Nettoyage de gouttières','🪟 Nettoyage de fenêtres','🌸 Ménage printanier','♻️ Collecte de métaux','🚿 Lavage à pression','🧹 Balayage','🖌️ Peinture','🪴 Jardinage','💧 Arrosage','🔨 Menus travaux','🐾 Aide aux animaux','✂️ Taille de haies','🧂 Salage','📦 Aide au déménagement'];
 
-let currentLang = 'en';
+let currentLang = 'fr';
+document.addEventListener('DOMContentLoaded', () => setLang('fr'));
 let currentFormTab = 'customer';
 
 function setLang(lang) {
